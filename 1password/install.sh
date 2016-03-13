@@ -1,0 +1,1 @@
+brew cask install --appdir="/Applications" 1password

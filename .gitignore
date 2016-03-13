@@ -1,0 +1,11 @@
+.gitconfig.local
+sessions
+.netrwhist
+spell
+bundle/
+.swp
+*.swp
+.backup
+.swap
+.undo
+.DS_Store

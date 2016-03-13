@@ -1,0 +1,1 @@
+go get -v -u github.com/maxcnunes/tokenizer

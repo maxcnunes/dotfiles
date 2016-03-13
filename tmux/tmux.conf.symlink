@@ -1,0 +1,64 @@
+# Set term color properly
+set -g default-terminal "xterm-256color"
+
+# Tabs
+set -g base-index 1
+set -g pane-base-index 1
+setw -g window-status-format '#I:#W#F |'
+setw -g window-status-current-format '#[fg=colour231,bg=colour59] #I:#W#F #[fg=colour255,bg=colour232] |'
+
+# Monitor activity
+setw -g monitor-activity on
+setw -g window-status-activity-attr none
+setw -g window-status-activity-bg colour232
+setw -g window-status-activity-fg colour255
+
+# Status bar
+set -g status-position top
+set -g status-bg colour232
+set -g status-fg colour255
+set -g status-left '#[fg=colour4] #{online_status}  '
+set -g status-right '#{prefix_highlight}#[fg=colour231,bg=colour59] ◴ %a %Y-%m-%d %H:%M #[fg=colour255,bg=colour232] #{battery_icon} #{battery_percentage} '
+set -g status-right-length 50
+
+# Message bar
+set -g message-bg colour232
+set -g message-fg colour255
+
+# Remove gradient from borders
+set -g pane-border-fg colour237
+set -g pane-active-border-fg colour237
+
+# Start at 1 rather than 0
+set -g base-index 1
+
+# open new windows and panes in the same directory
+bind-key c new-window -c "#{pane_current_path}"
+bind-key % split-window -h -c "#{pane_current_path}"
+bind-key '"' split-window -v -c "#{pane_current_path}"
+
+# Highlight active window
+set-window-option -g window-status-current-fg white
+
+# Set up reload key for tmux
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# Plugins configurations
+set -g @online_icon '☁'
+set -g @offline_icon '×'
+set -g @route_to_ping 'www.duckduckgo.com'
+set -g @prefix_highlight_bg 'blue'
+
+# List of plugins
+# Supports `github_username/repo` or full git URLs
+set -g @tpm_plugins "			\
+  tmux-plugins/tpm			\
+  tmux-plugins/tmux-copycat		\
+  tmux-plugins/tmux-battery-osx		\
+  tmux-plugins/tmux-sessionist		\
+  tmux-plugins/tmux-online-status	\
+  tmux-plugins/tmux-prefix-highlight	\
+"
+
+# initializes TMUX plugin manager
+run-shell ~/.tmux/plugins/tpm/tpm

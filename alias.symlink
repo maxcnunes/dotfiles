@@ -1,0 +1,73 @@
+alias c='docker-compose'
+alias cb='docker-compose build'
+alias cup='docker-compose up'
+alias cr='docker-compose run --service-ports --rm'
+alias crl='docker-compose run --service-ports --rm local'
+alias crd='docker-compose run --service-ports --rm develop'
+alias crt='docker-compose run --rm test'
+alias crp='docker-compose run --rm provision'
+alias crci='docker-compose run --rm ci'
+alias crwt='docker-compose run --rm watchtest'
+alias cru='docker-compose run --rm update'
+alias cps='docker-compose ps'
+alias clogs='docker-compose logs'
+alias gosrc='cd /vagrant/gocode/src/github.com/maxcnunes/'
+alias quizips="~/Development/bravi/bravi-quiz/cloudformation/show-instances-ips.sh"
+
+reload-alias() {
+	if [ -f /vagrant/alias.sh ]; then
+		source /vagrant/alias.sh
+		echo "> alias reloaded"
+	elif [ -f ~/Development/alias.sh ]; then
+		source ~/Development/alias.sh
+		echo "> alias reloaded"
+	else
+		echo "> alias NOT reloaded"
+	fi
+}
+
+cleandocker() {
+	docker images --quiet --filter=dangling=true | xargs --no-run-if-empty docker rmi
+	sh /vagrant/docker-cleanup-volumes.sh clean
+}
+
+devbox() {
+	COMMAND=$1
+	cd ~/Development/dockito/devbox
+	vagrant up
+	vagrant ssh
+}
+
+
+crm(){
+	docker-compose stop $1
+	docker-compose rm --force $1
+}
+
+
+# Mac
+# --------------------------
+
+finder-show-hidden-files() {
+	defaults write com.apple.finder AppleShowAllFiles YES
+}
+
+finder-hide-hidden-files() {
+	defaults write com.apple.finder AppleShowAllFiles NO
+}
+
+recover-bluetooth() {
+	sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
+	sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
+}
+
+reset-dns-cache() {
+	sudo killall -HUP mDNSResponder
+}
+
+vlc-torrent(){
+	go-peerflix "$1" --vlc
+}
+
+## -> Load secret configurations
+source ~/Dropbox/dotfiles-secret/alias.sh
