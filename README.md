@@ -3,6 +3,10 @@ dotfiles
 
 It contains the installation and configuration for most of apps I use.
 
+![**iTerm2 + Tmux**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/iterm2+tmux.png)
+
+![**VIM**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/vim.png)
+
 Clone this project:
 
 ```bash
