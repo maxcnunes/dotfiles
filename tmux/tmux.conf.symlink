@@ -43,6 +43,9 @@ set-window-option -g window-status-current-fg white
 # Set up reload key for tmux
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
+# Clean the window
+bind -n C-k send-keys -R \; clear-history
+
 # Plugins configurations
 set -g @online_icon '☁'
 set -g @offline_icon '×'
