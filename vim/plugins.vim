@@ -82,3 +82,8 @@ let g:ctrlp_use_caching = 0
 " highlight SignColumn guibg=233
 highlight SignColumn ctermbg=235
 
+
+""""""""""""""""""""""""""""""
+" vim-go
+""""""""""""""""""""""""""""""
+let g:go_fmt_command = "goimports"
