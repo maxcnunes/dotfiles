@@ -35,6 +35,16 @@ set undodir=~/.vim/.undo/
 """"""""""""""""""""""""""""""
 " mapping commands
 """"""""""""""""""""""""""""""
+" disable arrow keys
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
+
 nnoremap <leader>p :set invpaste paste?<CR>		" toggle paste mode
 noremap <silent> <Leader>c :nohl<Return>		" clean search highlight 
 
