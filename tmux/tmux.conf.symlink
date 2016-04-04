@@ -40,6 +40,10 @@ bind-key '"' split-window -v -c "#{pane_current_path}"
 # Highlight active window
 set-window-option -g window-status-current-fg white
 
+
+# When close one window sort it again
+set -g renumber-windows on
+
 # Set up reload key for tmux
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
