@@ -55,10 +55,11 @@ imap <c-s> <Esc>:w<CR>					" Ctrl+S to save current file in insert mode
 map <c-q> :q<CR>					" Ctrl+Q to quit current window
 nmap <C-Q> :q<CR>
 
-nnoremap <leader>bb :bnext<CR>				" switch to next buffer
-nnoremap <leader>bc :bd<CR>				" close current buffer
+nnoremap <leader>bn :bnext<CR>				" switch to next buffer
+nnoremap <leader>bd :bp\|:bd #<CR>			" close current buffer
+nnoremap <leader>bp :bprevious<CR>			" switch to previous buffer
 
 nnoremap <leader><esc> :noh<return><esc>		" clean last search
 
 set textwidth=120
-set colorcolumn=+1
+
