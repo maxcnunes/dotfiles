@@ -34,6 +34,8 @@ Plugin 'Lokaltog/vim-easymotion'		" simple search
 Plugin 'brettof86/vim-swigjs'			" swig syntax
 Plugin 'gabrielelana/vim-markdown'		" markdown syntax
 Plugin 'terryma/vim-multiple-cursors'		" multiple cursors
+Plugin 'fatih/vim-go'				" golang
+Plugin 'henrik/vim-qargs' 			" copy quicklist to args
 "Plugin 'tomasr/molokai'
 
 
