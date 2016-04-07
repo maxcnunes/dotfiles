@@ -71,11 +71,13 @@ set -g @prefix_highlight_bg 'blue'
 # Supports `github_username/repo` or full git URLs
 set -g @tpm_plugins "			\
   tmux-plugins/tpm			\
+  tmux-plugins/tmux-yank		\
   tmux-plugins/tmux-copycat		\
   tmux-plugins/tmux-battery-osx		\
   tmux-plugins/tmux-sessionist		\
   tmux-plugins/tmux-online-status	\
   tmux-plugins/tmux-prefix-highlight	\
+  tmux-plugins/tmux-resurrect		\
 "
 
 # initializes TMUX plugin manager
