@@ -36,6 +36,7 @@ Plugin 'gabrielelana/vim-markdown'		" markdown syntax
 Plugin 'terryma/vim-multiple-cursors'		" multiple cursors
 Plugin 'fatih/vim-go'				" golang
 Plugin 'henrik/vim-qargs' 			" copy quicklist to args
+Plugin 'regedarek/ZoomWin'			" zoom window
 "Plugin 'tomasr/molokai'
 
 
