@@ -38,6 +38,7 @@ Plugin 'fatih/vim-go'				" golang
 Plugin 'henrik/vim-qargs' 			" copy quicklist to args
 Plugin 'regedarek/ZoomWin'			" zoom window
 "Plugin 'tomasr/molokai'
+Plugin 'jiangmiao/auto-pairs'			" auto pairs
 
 
 
