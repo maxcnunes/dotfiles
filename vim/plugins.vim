@@ -28,7 +28,6 @@ set noshowmode
 " ctrlp.vim
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 2
-let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 5
 noremap <silent> <Leader>b :CtrlPBuffer<Return>	" open buffer fuzzy list
