@@ -59,7 +59,10 @@ set -g renumber-windows on
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # Clean the window
-bind -n C-k send-keys -R \; clear-history
+bind u send-keys -R \; clear-history
+
+# Unlimited history
+set -g history-limit 999999999
 
 # Plugins configurations
 set -g @online_icon '☁'
