@@ -13,6 +13,7 @@ alias cps='docker-compose ps'
 alias clogs='docker-compose logs'
 alias gosrc='cd /vagrant/gocode/src/github.com/maxcnunes/'
 alias quizips="~/Development/bravi/bravi-quiz/cloudformation/show-instances-ips.sh"
+alias grep_exclude_node_modules='grep --exclude-dir="node_modules"'
 
 reload-alias() {
 	if [ -f /vagrant/alias.sh ]; then
@@ -70,4 +71,4 @@ vlc-torrent(){
 }
 
 ## -> Load secret configurations
-source ~/Dropbox/dotfiles-secret/alias.sh
+source /Users/maxcnunes/Dropbox/dotfiles-secret/alias.sh
