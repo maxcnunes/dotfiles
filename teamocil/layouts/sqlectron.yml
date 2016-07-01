@@ -1,0 +1,10 @@
+windows:
+  - name: sqlectron
+    root: ~/Development/sqlectron/sqlectron-gui
+    layout: main-vertical
+    panes:
+      - commands:
+        - tmux resize-pane -t 1 -x 180
+        - vim
+      - time
+      - time
