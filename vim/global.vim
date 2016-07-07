@@ -2,22 +2,28 @@
 set nocompatible
 syntax on
 filetype plugin indent on
-
-let mapleader = ","			" map leader key to ','
-"set term=xterm-256color
 set termencoding=utf-8
+
 
 """"""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
+"
+"" OSX
+"set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
+"colorscheme onedark
+"let g:airline_theme='onedark'
+"let g:onedark_termcolors=16
+"set background=dark
+"
+"" Linux
+let base16colorspace=256
+let g:onedark_termcolors=256
+set t_Co=256
 colorscheme onedark
-"colorscheme solarized
+let s:black = { "gui": "#282C34", "cterm": "0", "cterm16": "0" }
 
-let g:airline_theme='onedark'
-let g:onedark_termcolors=16
-set background=dark
-
+let mapleader = ","			" map leader key to ','
 
 set number
 set hlsearch				" highlight search terms
