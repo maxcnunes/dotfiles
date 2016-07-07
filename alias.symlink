@@ -71,4 +71,4 @@ vlc-torrent(){
 }
 
 ## -> Load secret configurations
-source /Users/maxcnunes/Dropbox/dotfiles-secret/alias.sh
+source ~/Dropbox/dotfiles-secret/alias.sh

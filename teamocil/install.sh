@@ -2,5 +2,5 @@
 gem install teamocil
 
 # Create your layout directory
-ln -sf /Users/maxcnunes/.dotfiles/teamocil/layouts /Users/maxcnunes/.teamocil
+ln -sf ~/.dotfiles/teamocil/layouts ~/.teamocil
 
