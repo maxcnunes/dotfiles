@@ -8,20 +8,20 @@ set termencoding=utf-8
 """"""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""
-"
-"" OSX
-"set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
-"colorscheme onedark
-"let g:airline_theme='onedark'
-"let g:onedark_termcolors=16
-"set background=dark
-"
-"" Linux
-let base16colorspace=256
-let g:onedark_termcolors=256
-set t_Co=256
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
 colorscheme onedark
-let s:black = { "gui": "#282C34", "cterm": "0", "cterm16": "0" }
+let g:airline_theme='onedark'
+
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    let g:onedark_termcolors=16
+    set background=dark
+  else
+    let g:onedark_termcolors=256
+    let s:black = { "gui": "#282C34", "cterm": "0", "cterm16": "0" }
+  endif
+endif
 
 let mapleader = ","			" map leader key to ','
 
