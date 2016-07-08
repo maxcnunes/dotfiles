@@ -3,10 +3,31 @@ dotfiles
 
 It contains the installation and configuration for most of apps I use.
 
-![**iTerm2 + Tmux**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/iterm2+tmux.png)
+> Important: It is not fully automated yet.
 
-![**VIM**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/vim.png)
+## Appearance
 
+### Darwin
+
+![**iTerm2 + Tmux**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/darwin_iterm2+tmux.png)
+
+![**VIM**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/darwin_vim.png)
+
+### Linux
+
+* Ubuntu 16.04
+* Gnome 3.20
+* **Appearance config in the desktop image**
+
+![**iTerm2 + Tmux**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/linux_gnome-terminal+tmux.png)
+
+![**VIM**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/linux_vim.png)
+
+![**Linux Desktop**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/linux_desktop.png)
+
+![**Linux Workspaces**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/linux_workspaces.png)
+
+## Install
 Clone this project:
 
 ```bash
