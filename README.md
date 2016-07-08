@@ -32,14 +32,6 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 ```
 
-# Silver Searcher
-
-Since is used [Silver Searcher](https://github.com/ggreer/the_silver_searcher) for faster search is necessary also have installed the Silver Searcher in your machine:
-
-```bash
-brew install the_silver_searcher
-```
-
 ## References
 
 Based on few existig vim configuration projects:
