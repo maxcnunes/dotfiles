@@ -53,7 +53,14 @@ inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
 
-nnoremap <leader>p :set invpaste paste?<CR>		" toggle paste mode
+" copy and paste to clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 noremap <silent> <Leader>c :nohl<Return>		" clean search highlight 
 
 nmap <c-s> :w<CR>					" Ctrl+S to save current file in normal mode
