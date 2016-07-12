@@ -5,7 +5,10 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="gitster"
+# ZSH_THEME="pure"
+# ZSH_THEME="max-pure"
+ZSH_THEME="me"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,7 +48,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mix)
+plugins=(git mix z)
+
 
 # User configuration
 
@@ -79,7 +83,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ~/Development/alias.sh
+export GOPATH=$HOME/Development/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+source ~/Development/alias.sh
+source $HOME/.cargo/env
+
+export NVM_DIR="/Users/maxcnunes/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by travis gem
+[ -f /Users/maxcnunes/.travis/travis.sh ] && source /Users/maxcnunes/.travis/travis.sh
 
 # http://superuser.com/questions/357355/how-can-i-get-controlleft-arrow-to-go-back-one-word-in-iterm2?answertab=votes#tab-top
 bindkey -e
@@ -88,3 +104,6 @@ bindkey '^[[1;9D' backward-word
 
 export NVM_DIR="/home/max/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# teamocil autocompletion
+compctl -g '~/.teamocil/*(:t:r)' teamocil

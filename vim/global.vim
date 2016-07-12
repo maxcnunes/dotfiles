@@ -14,12 +14,14 @@ let g:airline_theme='onedark'
 
 if has("unix")
   let s:uname = system("uname -s")
-  if s:uname == "Darwin"
+  if s:uname =~ "Darwin"
     let g:onedark_termcolors=16
   else
     let g:onedark_termcolors=256
   endif
 endif
+
+set background=dark
 
 let mapleader = ","			" map leader key to ','
 

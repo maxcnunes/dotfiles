@@ -21,7 +21,7 @@ do
   chmod +x "${installer}"
 done
 
-brew install tree
+# brew install tree
 
 # sh -c xcode/install.sh
 # sh -c osx/install.sh
@@ -50,7 +50,8 @@ brew install tree
 # sh -c ssh-tunnel-manager/install.sh
 # sh -c dropbox/install.sh
 
-# Link secret configurations
-ln -sf alias.symlink ~/Development/alias.sh
+# ln -sf alias.symlink ~/Development/alias.sh
+ln -sf /Users/maxcnunes/.dotfiles/alias.symlink /Users/maxcnunes/Development/alias.sh
+ln -sf /Users/maxcnunes/.dotfiles/sleep.symlink /Users/maxcnunes/.sleep
 ln -sf ~/Dropbox/dotfiles-secret/.tokenizer.json ~/
 ln -sf ~/Dropbox/dotfiles-secret/.sqlectron.json ~/
