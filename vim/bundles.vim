@@ -9,12 +9,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 
-Plugin 'joshdick/onedark.vim'	" surround
-Plugin 'joshdick/airline-onedark.vim'	" surround
-Plugin 'tpope/vim-surround'	" surround
-Plugin 'othree/yajs.vim'	" js highlight theme
-Plugin 'othree/es.next.syntax.vim'	" es7 highlight theme
-Plugin 'scrooloose/syntastic'	" linter
+Plugin 'joshdick/onedark.vim'			" surround
+Plugin 'joshdick/airline-onedark.vim'		" surround
+Plugin 'tpope/vim-surround'			" surround
+Plugin 'othree/yajs.vim'			" js highlight theme
+Plugin 'othree/es.next.syntax.vim'		" es7 highlight theme
+Plugin 'scrooloose/syntastic'			" linter
 Plugin 'pmsorhaindo/syntastic-local-eslint.vim'	" use local eslint
 Plugin 'altercation/vim-colors-solarized'	" solarized theme
 Plugin 'vim-airline/vim-airline'		" status line
