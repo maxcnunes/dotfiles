@@ -9,8 +9,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 
-Plugin 'joshdick/onedark.vim'			" surround
-Plugin 'joshdick/airline-onedark.vim'		" surround
+Plugin 'joshdick/onedark.vim'			" theme
+Plugin 'joshdick/airline-onedark.vim'		" theme status bar
 Plugin 'tpope/vim-surround'			" surround
 Plugin 'othree/yajs.vim'			" js highlight theme
 Plugin 'othree/es.next.syntax.vim'		" es7 highlight theme
@@ -23,6 +23,7 @@ Plugin 'vim-airline/vim-airline-themes'		" status line theme
 Plugin 'tpope/vim-fugitive'			" git wrapper 
 Plugin 'airblade/vim-gitgutter'			" git status
 Plugin 'scrooloose/nerdtree'			" file system explorer
+Plugin 'scrooloose/nerdcommenter'		" commenter
 Plugin 'ctrlpvim/ctrlp.vim' 			" fuzzy file finder
 Plugin 'editorconfig/editorconfig-vim' 		" editor config
 Plugin 'rking/ag.vim'				" search
