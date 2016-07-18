@@ -55,3 +55,12 @@ ln -sf /Users/maxcnunes/.dotfiles/alias.symlink /Users/maxcnunes/Development/ali
 ln -sf /Users/maxcnunes/.dotfiles/sleep.symlink /Users/maxcnunes/.sleep
 ln -sf ~/Dropbox/dotfiles-secret/.tokenizer.json ~/
 ln -sf ~/Dropbox/dotfiles-secret/.sqlectron.json ~/
+
+
+if [ "$(uname)" == "Darwin" ]; then
+  # Add Darwin configuration
+  echo "Missing Darwin terminal theme configuration"
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/denysdovhan/gnome-terminal-one/master/one-dark.sh | sed 's/282c34/262626/g')"
+  gconftool-2 --set /apps/gnome-terminal/global/default_profile --type string one-dark
+fi
