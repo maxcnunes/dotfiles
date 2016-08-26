@@ -30,7 +30,7 @@ set noshowmode
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 5
-noremap <silent> <Leader>b :CtrlPBuffer<Return>	" open buffer fuzzy list
+noremap <silent> <Leader>bb :CtrlPBuffer<Return>	" open buffer fuzzy list
 
 
 """"""""""""""""""""""""""""""
