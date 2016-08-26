@@ -29,6 +29,7 @@ set number
 set hlsearch				" highlight search terms
 set list listchars=tab:»·,trail:·	" show hidden tabs and white spaces
 
+set autowrite 				" save on buffer switch
 
 """"""""""""""""""""""""""""""
 " Gathers vim files
