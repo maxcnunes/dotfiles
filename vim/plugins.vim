@@ -88,6 +88,7 @@ highlight SignColumn ctermbg=235
 """"""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
+let g:go_list_height = 3
 
 let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
