@@ -87,6 +87,30 @@ highlight SignColumn ctermbg=235
 " vim-go
 """"""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave = 1
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
+let g:go_list_type = "quickfix"
+
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+autocmd FileType go nmap <leader>rt  <Plug>(go-test)
+autocmd FileType go nmap <leader>rr  <Plug>(go-run)
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#cmd#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
