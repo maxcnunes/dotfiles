@@ -37,6 +37,7 @@ Plugin 'henrik/vim-qargs' 			" copy quicklist to args
 Plugin 'regedarek/ZoomWin'			" zoom window
 Plugin 'jiangmiao/auto-pairs'			" auto pairs
 Plugin 'chrisbra/csv.vim'			" csv
+Plugin 'derekwyatt/vim-scala'			" scala
 
 
 
