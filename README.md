@@ -46,16 +46,16 @@ cd ~/.dotfiles
 ./script/install.sh
 ```
 
-## My Current Vim Configurations 
+## Manual Configurations
 
-### Configuring VIM
+Some configurations are easier manually *(or I'm too tired to automate them right now)*.
 
-In order to keep simple installing and updating plugins. Lets clone [Vundle](https://github.com/gmarik/Vundle.vim) and use it to install all plugins:
+## Linux: Gnome extensions from Chrome
 
-```bash
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-```
+* [Workspaces to Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/)
+* [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+* [Transparent Top Bar](https://extensions.gnome.org/extension/857/transparent-top-bar/)
+* [Dynamic Top Bar](https://extensions.gnome.org/extension/885/dynamic-top-bar/)
 
 ## References
 
