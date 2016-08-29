@@ -1,3 +1,11 @@
-brew cask install --appdir="/Applications" shuttle
+#!/bin/bash
+set -e
 
-ln -sf ~/Dropbox/dotfiles-secret/shuttle.json ~/.shuttle.json
+dotfiles=$HOME/.dotfiles
+source $dotfiles/script/helper.sh
+
+if [ "$OS" == "darwin" ]; then
+  brew cask install --appdir="/Applications" shuttle
+
+  ln -sf ~/Dropbox/dotfiles-secret/shuttle.json ~/.shuttle.json
+fi

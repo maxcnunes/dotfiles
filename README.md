@@ -32,14 +32,18 @@ Clone this project:
 
 ```bash
 git clone git@github.com:maxcnunes/dotfiles.git ~/.dotfiles
+or
+git clone https://github.com/maxcnunes/dotfiles.git ~/.dotfiles
 ```
+
+Install Dropbox and sync the data.
 
 Bootstrap and install apps:
 
 ```bash
 cd ~/.dotfiles
-sh script/bootstrap.sh
-sh script/install.sh
+./script/bootstrap.sh
+./script/install.sh
 ```
 
 ## My Current Vim Configurations 

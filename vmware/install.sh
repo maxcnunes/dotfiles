@@ -1,2 +1,9 @@
+#!/bin/bash
+set -e
 
-brew cask install --appdir="/Applications" vmware-fusion
+dotfiles=$HOME/.dotfiles
+source $dotfiles/script/helper.sh
+
+if [ "$OS" == "darwin" ]; then
+  brew cask install --appdir="/Applications" vmware-fusion
+fi

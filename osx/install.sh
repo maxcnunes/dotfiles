@@ -1,3 +1,13 @@
+#!/bin/bash
+set -e
+
+dotfiles=$HOME/.dotfiles
+source $dotfiles/script/helper.sh
+
+if [ "$OS" != "darwin" ]; then
+  exit 0
+fi
+
 # https://github.com/ehuynh/dotfiles/blob/master/osx/osx.sh
 # https://github.com/chrisopedia/dotfiles-necolas/tree/78fdc9652f5309cbb8e970630c5df8430aef24d2
 

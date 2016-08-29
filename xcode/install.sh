@@ -1,4 +1,9 @@
-source ./lib/utils
+#!/bin/bash
+set -e
+
+dotfiles=$HOME/.dotfiles
+source $dotfiles/script/helper.sh
+source $dotfiles/lib/utils
 
 # Check if xCode is present
 check_xcode() {
@@ -24,4 +29,6 @@ install_xcode() {
 }
 
 
-check_xcode
+if [ "$OS" == "darwin" ]; then
+  check_xcode
+fi

@@ -30,7 +30,6 @@ seek_confirmation() {
 
 # Test whether the result of an 'ask' is a confirmation
 is_confirmed() {
-echo ">>>>> $REPLY"
     if [[ "$REPLY" =~ ^[Yy]$ ]]; then
       return 0
     fi
