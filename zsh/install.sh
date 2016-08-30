@@ -11,7 +11,10 @@ elif [ "$OS" == "linux" ]; then
 fi
 
 # adds zsh to the list of known shells
-command -v zsh | sudo tee -a /etc/shells
+if ! ( grep -q zsh /etc/shells ); then
+  command -v zsh | sudo tee -a /etc/shells
+fi
 
-# # set your default shell to zsh
-# sudo chsh -s /usr/local/bin/zsh
+# Important
+# In case have problem like "Password: chsh: PAM: Authentication failure".
+# Maybe is because the /etc/shells file has an invalid path.
