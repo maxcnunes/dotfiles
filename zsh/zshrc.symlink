@@ -83,13 +83,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+dotfiles=$HOME/.dotfiles
+source $dotfiles/script/helper.sh
+
+if [ "$OS" == "darwin" ]; then
+  export GOROOT=/usr/local/opt/go/libexec
+elif [ "$OS" == "linux" ]; then
+  export GOROOT=/usr/local/go
+fi
+
 export GOPATH=$HOME/Development/go
-export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 source ~/Development/alias.sh
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 
 export NVM_DIR="/Users/maxcnunes/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
