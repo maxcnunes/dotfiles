@@ -17,6 +17,7 @@ It contains the installation and configuration for most of apps I use.
 
 * Ubuntu 16.04
 * Gnome 3.20
+* Terminal Font [Fura Code Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete.otf)
 * **Appearance config in the desktop image**
 
 ![**iTerm2 + Tmux**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/linux_gnome-terminal+tmux.png)
