@@ -59,7 +59,7 @@ Some configurations are easier manually *(or I'm too tired to automate them righ
 
 ## Linux: Terminal Font
 
-Although the font is automatically download to `~/.fonts`. I could not set automatically the gnome terminal font. So we need to do it manually changing the font to: `SauceCodePro Nerd Font Semibold 11`.
+Although the font is automatically download to `~/.fonts`. I could not set automatically the gnome terminal font. So we need to do it manually changing the font to: `SauceCodePro Nerd Font Semibold 10`.
 
 ## References
 
