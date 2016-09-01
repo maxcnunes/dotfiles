@@ -51,3 +51,8 @@ sudo apt-get install chrome-gnome-shell
 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/denysdovhan/gnome-terminal-one/master/one-dark.sh | sed 's/282c34/262626/g')"
 gconftool-2 --set /apps/gnome-terminal/global/default_profile --type string one-dark
+
+
+# Terminal font
+mkdir ~/.fonts
+wget -P ~/.fonts 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold/complete/Sauce%20Code%20Pro%20Semibold%20Nerd%20Font%20Complete.ttf'

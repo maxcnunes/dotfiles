@@ -17,7 +17,6 @@ It contains the installation and configuration for most of apps I use.
 
 * Ubuntu 16.04
 * Gnome 3.20
-* Terminal Font [Fura Code Regular Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete.otf)
 * **Appearance config in the desktop image**
 
 ![**iTerm2 + Tmux**](https://raw.githubusercontent.com/maxcnunes/dotfiles/master/images/linux_gnome-terminal+tmux.png)
@@ -57,6 +56,10 @@ Some configurations are easier manually *(or I'm too tired to automate them righ
 * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 * [Transparent Top Bar](https://extensions.gnome.org/extension/857/transparent-top-bar/)
 * [Dynamic Top Bar](https://extensions.gnome.org/extension/885/dynamic-top-bar/)
+
+## Linux: Terminal Font
+
+Although the font is automatically download to `~/.fonts`. I could not set automatically the gnome terminal font. So we need to do it manually changing the font to: `SauceCodePro Nerd Font Semibold 11`.
 
 ## References
 
