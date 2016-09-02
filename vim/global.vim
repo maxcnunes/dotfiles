@@ -30,18 +30,13 @@ set hlsearch				" highlight search terms
 set list listchars=tab:»·,trail:·	" show hidden tabs and white spaces
 
 set autowrite 				" save on buffer switch
+set hidden            " hide buffers instead of closing them
 
 """"""""""""""""""""""""""""""
 " Gathers vim files
 """"""""""""""""""""""""""""""
 set backupdir=~/.vim/.backup/
 set directory=~/.vim/.swap/
-set undodir=~/.vim/.undo/
-
-" Persistent undo
-set undofile
-set undolevels=1000
-set undoreload=10000
 
 """"""""""""""""""""""""""""""
 " mapping commands

@@ -12,7 +12,7 @@ fi
 
 ln -fs $dotfiles/vim ~/.vim
 ln -fs $dotfiles/vimrc ~/.vimrc
-mkdir -p ~/.vim/{.backup,.swap,.undo}
+mkdir -p ~/.vim/{.backup,.swap}
 
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
   echo '==> Installing vundle'
