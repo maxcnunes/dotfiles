@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 
 
 Plugin 'joshdick/onedark.vim'			" theme
-Plugin 'joshdick/airline-onedark.vim'		" theme status bar
 Plugin 'tpope/vim-surround'			" surround
 Plugin 'othree/yajs.vim'			" js highlight theme
 Plugin 'othree/es.next.syntax.vim'		" es7 highlight theme
