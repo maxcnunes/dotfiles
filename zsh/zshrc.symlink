@@ -83,14 +83,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-dotfiles=$HOME/.dotfiles
-source $dotfiles/script/helper.sh
+ dotfiles=$HOME/.dotfiles
+ source $dotfiles/script/helper.sh
 
-if [ "$OS" == "darwin" ]; then
-  export GOROOT=/usr/local/opt/go/libexec
-elif [ "$OS" == "linux" ]; then
-  export GOROOT=/usr/local/go
-fi
+ if [[ "$OS" == "darwin" ]]; then
+   export GOROOT=/usr/local/opt/go/libexec
+ elif [[ "$OS" == "linux" ]]; then
+   export GOROOT=/usr/local/go
+ fi
 
 export GOPATH=$HOME/Development/go
 export PATH=$PATH:$GOPATH/bin
