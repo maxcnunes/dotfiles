@@ -11,7 +11,7 @@ elif [ "$OS" == "linux" ]; then
 fi
 
 ln -fs $dotfiles/vim ~/.vim
-ln -fs $dotfiles/vimrc ~/.vimrc
+ln -fs $dotfiles/vim/vimrc ~/.vimrc
 mkdir -p ~/.vim/{.backup,.swap}
 
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
