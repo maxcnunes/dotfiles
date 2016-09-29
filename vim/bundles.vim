@@ -18,8 +18,7 @@ Plugin 'pmsorhaindo/syntastic-local-eslint.vim'	" use local eslint
 Plugin 'nvie/vim-flake8'			" python linter
 Plugin 'altercation/vim-colors-solarized'	" solarized theme
 Plugin 'vim-airline/vim-airline'		" status line
-Plugin 'vim-airline/vim-airline-themes'		" status line theme
-Plugin 'tpope/vim-fugitive'			" git wrapper 
+Plugin 'tpope/vim-fugitive'			" git wrapper
 Plugin 'airblade/vim-gitgutter'			" git status
 Plugin 'scrooloose/nerdtree'			" file system explorer
 Plugin 'tpope/vim-commentary'		" commenter
