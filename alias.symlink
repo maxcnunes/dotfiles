@@ -28,8 +28,15 @@ reload-alias() {
 }
 
 cleandocker() {
-	docker images --quiet --filter=dangling=true | xargs --no-run-if-empty docker rmi
-	sh /vagrant/docker-cleanup-volumes.sh clean
+	docker rmi $(docker images --quiet --filter "dangling=true")
+
+	if [ -f /vagrant/docker-cleanup-volumes.sh ]; then
+		sh /vagrant/docker-cleanup-volumes.sh clean
+	elif [ -f ~/Development/docker-cleanup-volumes.sh ]; then
+		sh ~/Development/docker-cleanup-volumes.sh clean
+	else
+		echo "> docker-cleanup-volumes.sh NOT found"
+	fi
 }
 
 devbox() {
