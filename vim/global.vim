@@ -31,6 +31,8 @@ set list listchars=tab:»·,trail:·	" show hidden tabs and white spaces
 
 set autowrite 				" save on buffer switch
 set hidden            " hide buffers instead of closing them
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
 
 """"""""""""""""""""""""""""""
 " Gathers vim files
@@ -59,7 +61,7 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
-noremap <silent> <Leader>c :nohl<Return>		" clean search highlight 
+noremap <silent> <Leader>c :nohl<Return>		" clean search highlight
 
 nmap <c-s> :w<CR>					" Ctrl+S to save current file in normal mode
 vmap <c-s> <Esc><c-s>gv					" Ctrl+S to save current file in visual mode
