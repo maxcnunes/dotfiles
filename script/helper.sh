@@ -20,15 +20,15 @@ fail () {
 directory_exist () {
   if [[ -d "$1" ]] ; then
     return 0
-  else 
+  else
     return 1
   fi
 }
 
 get_os () {
-  if [ "$(uname)" == "Darwin" ]; then
+  if [[ "$(uname)" == "Darwin" ]]; then
     echo "darwin"
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
     echo "linux"
   else
     echo "windows"

@@ -83,23 +83,26 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
- dotfiles=$HOME/.dotfiles
- source $dotfiles/script/helper.sh
+source ~/.dotfiles/script/helper.sh
 
- if [[ "$OS" == "darwin" ]]; then
-   export GOROOT=/usr/local/opt/go/libexec
- elif [[ "$OS" == "linux" ]]; then
-   export GOROOT=/usr/local/go
- fi
+if [[ "$OS" == "darwin" ]]; then
+  export GOROOT=/usr/local/opt/go/libexec
+elif [[ "$OS" == "linux" ]]; then
+  export GOROOT=/usr/local/go
+fi
 
 export GOPATH=$HOME/Development/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 source ~/Development/alias.sh
-# source $HOME/.cargo/env
 
-export NVM_DIR="/Users/maxcnunes/.nvm"
+
+if [[ "$OS" == "darwin" ]]; then
+  export NVM_DIR="/Users/maxcnunes/.nvm"
+elif [[ "$OS" == "linux" ]]; then
+  export NVM_DIR="/home/max/.nvm"
+fi
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # added by travis gem
@@ -109,9 +112,6 @@ export NVM_DIR="/Users/maxcnunes/.nvm"
 bindkey -e
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
-
-export NVM_DIR="/home/max/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # teamocil autocompletion
 compctl -g '~/.teamocil/*(:t:r)' teamocil
