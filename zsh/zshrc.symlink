@@ -98,15 +98,11 @@ export PATH=$PATH:$GOROOT/bin
 source ~/Development/alias.sh
 
 
-if [[ "$OS" == "darwin" ]]; then
-  export NVM_DIR="/Users/maxcnunes/.nvm"
-elif [[ "$OS" == "linux" ]]; then
-  export NVM_DIR="/home/max/.nvm"
-fi
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # added by travis gem
-[ -f /Users/maxcnunes/.travis/travis.sh ] && source /Users/maxcnunes/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # http://superuser.com/questions/357355/how-can-i-get-controlleft-arrow-to-go-back-one-word-in-iterm2?answertab=votes#tab-top
 bindkey -e
