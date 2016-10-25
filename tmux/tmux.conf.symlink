@@ -1,6 +1,6 @@
 # Set term color properly
 set -g default-terminal "xterm-256color"
-set -g default-command 'reattach-to-user-namespace $SHELL --login'
+if-shell 'test "$(uname -s)" = Darwin' 'set-option -g default-command "exec reattach-to-user-namespace $SHELL --login"'
 
 # Tabs
 set -g base-index 1
