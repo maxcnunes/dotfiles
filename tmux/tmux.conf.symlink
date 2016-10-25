@@ -41,11 +41,19 @@ bind-key '"' split-window -v -c "#{pane_current_path}"
 # Highlight active window
 set-window-option -g window-status-current-fg white
 
-# Use vim keybindings in copy mode
-setw -g mode-keys vi
+# vim mode
+set -g @shell_mode 'vi'
+set-window-option -g mode-keys vi
 
 # Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy v begin-selection
+bind-key -t vi-copy 'v' begin-selection
+
+# Setup 'y' to copy selection as in Vim
+bind-key -t vi-copy 'y' copy-selection
+
+# copy to clipboard
+if-shell 'test "$(uname -s)" = Linux' 'bind -t vi-copy y copy-pipe "xclip -sel clip -i"'
+
 
 # Switch between panes like VIM
 bind h select-pane -L
