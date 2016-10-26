@@ -25,6 +25,7 @@ set background=dark
 
 let mapleader = ","			" map leader key to ','
 
+set relativenumber
 set number
 set hlsearch				" highlight search terms
 set list listchars=tab:»·,trail:·	" show hidden tabs and white spaces
