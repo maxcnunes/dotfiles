@@ -78,4 +78,8 @@ vlc-torrent(){
 }
 
 ## -> Load secret configurations
-source ~/Dropbox/dotfiles-secret/alias.sh
+if [[ "$USER" == "core" ]]; then
+	source /Users/maxcnunes/Dropbox/dotfiles-secret/alias.sh
+else
+	source ~/Dropbox/dotfiles-secret/alias.sh
+fi
