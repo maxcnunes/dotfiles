@@ -35,9 +35,18 @@ noremap <silent> <Leader>bb :CtrlPBuffer<Return>	" open buffer fuzzy list
 
 
 """"""""""""""""""""""""""""""
+" hardtime
+""""""""""""""""""""""""""""""
+let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
+let g:hardtime_ignore_buffer_patterns = [ "NERD.*"  ]
+let g:hardtime_ignore_quickfix = 1
+let g:hardtime_allow_different_key = 1
+
+""""""""""""""""""""""""""""""
 " nerdtree
 """"""""""""""""""""""""""""""
-noremap <silent> <Leader>t :NERDTreeToggle<Return>	" toggle treeview 
+noremap <silent> <Leader>t :NERDTreeToggle<Return>	" toggle treeview
 noremap <silent> <Leader>f :NERDTreeFind<Return>	" find file
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp']

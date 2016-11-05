@@ -37,6 +37,7 @@ Plugin 'jiangmiao/auto-pairs'			" auto pairs
 Plugin 'chrisbra/csv.vim'			" csv
 Plugin 'derekwyatt/vim-scala'			" scala
 Plugin 'dahu/vim-fanfingtastic'			" ft,; improved
+Plugin 'takac/vim-hardtime'			" force stop repeating the basic movement keys
 
 
 
