@@ -2,8 +2,8 @@ VIM Commands
 ============
 
 ## Insert Mode
-- `di<character>`: delete inside (eg. `di"`) 
-- `dt<character>`: delete until (eg. `dt"`) 
+- `di<character>`: delete inside (eg. `di"`)
+- `dt<character>`: delete until (eg. `dt"`)
 - `%s=<old>=<new>=g`: find and replace
 
 ## Visual Mode
@@ -20,3 +20,9 @@ VIM Commands
 
 - `v` `a` `t` - seleciona uma tag e todo seu conteudo
 - - `v` `i` `t` - seleciona todo o conteudo de uma tag
+
+## Spell
+
+* `:syntax off` - if is editing a programming language document is required to disable the syntax highlight
+* `:set spell` - enable spell check
+* `z=` - list suggested words
