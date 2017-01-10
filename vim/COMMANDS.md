@@ -26,3 +26,10 @@ VIM Commands
 * `:syntax off` - if is editing a programming language document is required to disable the syntax highlight
 * `:set spell` - enable spell check
 * `z=` - list suggested words
+
+## Find and replace multiple files
+
+```
+:Ag foo
+:cdo s/foo/bar/g | update
+```
