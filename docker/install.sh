@@ -12,8 +12,8 @@ if [ "$OS" == "linux" ]; then
   apt-cache policy docker-engine
   sudo apt-get install -y docker-engine
   sudo usermod -aG docker $(whoami)
-fi
 
-# docker-compose
-sudo wget -O /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m`
-sudo chmod +x /usr/local/bin/docker-compose
+  # docker-compose
+  sudo wget -O /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m`
+  sudo chmod +x /usr/local/bin/docker-compose
+fi
