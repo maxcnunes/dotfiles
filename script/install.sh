@@ -14,12 +14,6 @@ if [ "$OS" == "linux" ]; then
 fi
 
 sh ssh/install.sh
-mkdir -p ~/Development
-mkdir -p ~/.ssh
-cp ssh/* ~/.ssh
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/id_rsa
-chmod 644 ~/.ssh/id_rsa.pub
 ssh-add
 
 ln -sf ~/.dotfiles/alias.symlink ~/Development/alias.sh
