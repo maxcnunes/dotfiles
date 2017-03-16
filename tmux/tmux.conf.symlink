@@ -14,13 +14,35 @@ setw -g window-status-activity-attr none
 setw -g window-status-activity-bg colour232
 setw -g window-status-activity-fg colour255
 
-# Status bar
+# # Status bar
 set -g status-position top
-set -g status-bg colour232
-set -g status-fg colour255
-set -g status-left '#[fg=colour4] #{online_status}  '
-set -g status-right '#{prefix_highlight}#[fg=colour231,bg=colour59] ◴ %a %Y-%m-%d %H:%M #[fg=colour255,bg=colour232] #{battery_icon} #{battery_percentage} '
-set -g status-right-length 50
+# set -g status-bg colour255
+# set -g status-fg colour255
+set status-utf8 on
+set utf8 on
+
+set -g default-terminal "screen-256color"
+
+set -g status-bg black
+set -g status-fg white
+# set -g status-left '#[fg=colour4] #{online_status}  '
+# set -g status-right '#{prefix_highlight}#[fg=colour231,bg=colour59] ◴ %a %Y-%m-%d %H:%M #[fg=colour255,bg=colour232] #{battery_icon} #{battery_percentage} '
+# set -g status-right-length 50
+
+# set -g status-interval 1
+# set -g status-justify centre
+
+set -g status-left-length 150
+set -g status-left "#[fg=colour4 bg=#ffffff bold] #{online_status}  #[fg=#ffffff bg=#000000 none]#[fg=#ffffff bg=colour232 bold] ${USER}@#H #[fg=colour4 bg=#ffffff bold] ∆ "
+
+set -g status-right-length 150
+set -g status-right "#[fg=colour4 bg=#ffffff bold] ∆ #{prefix_highlight}#[fg=#ffffff bg=#000000] ◴ %a %Y-%m-%d %H:%M"
+
+#window
+set -g window-status-current-format "#[fg=#000000 bg=#ffffff] #I ⟩ #W "
+# set -g window-status-current-format "#[fg=#fff bg=#000 none]#[fg=#c0c0c0 bg=#333333]#[fg=#ffffff bg=#000000 bold] #I ⟩ #T "
+set -g window-status-format "#[fg=#888888 bg=#21252b none] #I ⟩#[fg=#ffffff] #W "
+set -g window-status-separator ""
 
 # Message bar
 set -g message-bg colour232
