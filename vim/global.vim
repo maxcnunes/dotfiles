@@ -76,7 +76,8 @@ nnoremap <leader>bn :bnext<CR>				" switch to next buffer
 nnoremap <leader>bd :bp\|:bd #<CR>			" close current buffer
 nnoremap <leader>bp :bprevious<CR>			" switch to previous buffer
 
-nnoremap <leader><esc> :noh<return><esc>		" clean last search
+nnoremap <c-c> :noh<return><esc>		" clean last search
+inoremap jk <esc>					" clean last search
 
 set textwidth=120
 
