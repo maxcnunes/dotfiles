@@ -14,6 +14,7 @@ alias clogs='docker-compose logs'
 alias gosrc='cd /vagrant/gocode/src/github.com/maxcnunes/'
 alias quizips="~/Development/bravi/bravi-quiz/cloudformation/show-instances-ips.sh"
 alias grep_exclude_node_modules='grep --exclude-dir="node_modules"'
+alias tm="gtime --format='\n---\n\"%C\" took %e seconds with %P CPU usage\n---\n'"
 
 reload-alias() {
 	if [ -f /vagrant/alias.sh ]; then
