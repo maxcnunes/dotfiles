@@ -14,7 +14,7 @@ Plugin 'tpope/vim-surround'			" surround
 Plugin 'othree/yajs.vim'			" js highlight theme
 Plugin 'othree/es.next.syntax.vim'		" es7 highlight theme
 Plugin 'scrooloose/syntastic'			" linter
-Plugin 'pmsorhaindo/syntastic-local-eslint.vim'	" use local eslint
+Plugin 'maxcnunes/syntastic-local-eslint.vim'	" use local eslint
 Plugin 'nvie/vim-flake8'			" python linter
 Plugin 'altercation/vim-colors-solarized'	" solarized theme
 Plugin 'vim-airline/vim-airline'		" status line
