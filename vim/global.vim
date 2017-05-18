@@ -30,10 +30,11 @@ set number
 set hlsearch				" highlight search terms
 set list listchars=tab:»·,trail:·	" show hidden tabs and white spaces
 
-set autowrite 				" save on buffer switch
-set hidden            " hide buffers instead of closing them
-set history=1000         " remember more commands and search history
-set undolevels=1000      " use many muchos levels of undo
+set autowrite				" save on buffer switch
+set hidden				" hide buffers instead of closing them
+set history=1000			" remember more commands and search history
+set undolevels=1000			" use many muchos levels of undo
+set timeoutlen=1000 ttimeoutlen=0	" make escape command faster
 
 """"""""""""""""""""""""""""""
 " Gathers vim files
