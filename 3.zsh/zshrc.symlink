@@ -113,3 +113,5 @@ bindkey '^[[1;9D' backward-word
 compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 alias gplrnps="git pull -r origin $(current_branch) && git push origin $(current_branch)"
+
+source /Users/maxnunes/Development/invision/InVision_Docker/scripts-native/invision.sh

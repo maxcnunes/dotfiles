@@ -30,3 +30,4 @@ do
 done
 
 # brew install tree
+brew install reattach-to-user-namespace

@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+exit 0
 
 dotfiles=$HOME/.dotfiles
 source $dotfiles/script/helper.sh

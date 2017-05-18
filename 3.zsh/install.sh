@@ -15,6 +15,8 @@ if ! ( grep -q zsh /etc/shells ); then
   command -v zsh | sudo tee -a /etc/shells
 fi
 
+chsh -s $(which zsh)
+
 # Important
 # In case have problem like "Password: chsh: PAM: Authentication failure".
 # Maybe is because the /etc/shells file has an invalid path.
