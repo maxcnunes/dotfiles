@@ -65,9 +65,7 @@ vmap <Leader>P "+P
 
 noremap <silent> <Leader>c :nohl<Return>		" clean search highlight
 
-nmap <c-s> :w<CR>					" Ctrl+S to save current file in normal mode
-vmap <c-s> <Esc><c-s>gv					" Ctrl+S to save current file in visual mode
-imap <c-s> <Esc>:w<CR>					" Ctrl+S to save current file in insert mode
+map <leader>qf :copen<CR>  " go to quickfix list
 
 map <c-q> :q<CR>					" Ctrl+Q to quit current window
 nmap <C-Q> :q<CR>
@@ -80,4 +78,9 @@ nnoremap <c-c> :noh<return><esc>		" clean last search
 inoremap jk <esc>					" clean last search
 
 set textwidth=120
+
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
+  autocmd BufEnter * match OverLength /\%121v.*/
+augroup END
 

@@ -98,12 +98,19 @@ highlight SignColumn ctermbg=235
 """"""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
-" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-" let g:syntastic_go_checkers = ['go']
-" let g:go_list_type = "quickfix"
 let g:go_list_height = 3
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'gometalinter']
+" Only executed on saving a go file
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+" Only executed on :GoMetaLinter
+" let g:syntastic_go_gometalinter_args = ['--enable-all']
+" let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'megacheck']
+
+" Fix showing 2 windows for linter messages
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
 
 let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
@@ -118,7 +125,7 @@ autocmd FileType go nmap <leader>rr  <Plug>(go-run)
 function! s:build_go_files()
   let l:file = expand('%')
   if l:file =~# '^\f\+_test\.go$'
-    call go#cmd#Test(0, 1)
+    call go#test#Test(0, 1)
   elseif l:file =~# '^\f\+\.go$'
     call go#cmd#Build(0)
   endif
