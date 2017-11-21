@@ -15,8 +15,6 @@ Plugin 'othree/yajs.vim'			" js highlight theme
 Plugin 'othree/es.next.syntax.vim'		" es7 highlight theme
 Plugin 'scrooloose/syntastic'			" linter
 Plugin 'maxcnunes/syntastic-local-eslint.vim'	" use local eslint
-Plugin 'nvie/vim-flake8'			" python linter
-Plugin 'altercation/vim-colors-solarized'	" solarized theme
 Plugin 'vim-airline/vim-airline'		" status line
 Plugin 'tpope/vim-fugitive'			" git wrapper
 Plugin 'airblade/vim-gitgutter'			" git status
@@ -25,17 +23,13 @@ Plugin 'tpope/vim-commentary'		" commenter
 Plugin 'ctrlpvim/ctrlp.vim' 			" fuzzy file finder
 Plugin 'editorconfig/editorconfig-vim' 		" editor config
 Plugin 'rking/ag.vim'				" search
-Plugin 'flazz/vim-colorschemes'		 	" color scheme
 Plugin 'Lokaltog/vim-easymotion'		" simple search
-Plugin 'brettof86/vim-swigjs'			" swig syntax
-Plugin 'gabrielelana/vim-markdown'		" markdown syntax
 Plugin 'terryma/vim-multiple-cursors'		" multiple cursors
 Plugin 'fatih/vim-go'				" golang
 Plugin 'henrik/vim-qargs' 			" copy quicklist to args
 Plugin 'regedarek/ZoomWin'			" zoom window
 Plugin 'jiangmiao/auto-pairs'			" auto pairs
 Plugin 'chrisbra/csv.vim'			" csv
-Plugin 'derekwyatt/vim-scala'			" scala
 Plugin 'dahu/vim-fanfingtastic'			" ft,; improved
 Plugin 'takac/vim-hardtime'			" force stop repeating the basic movement keys
 
