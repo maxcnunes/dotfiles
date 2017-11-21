@@ -48,7 +48,7 @@ ZSH_THEME="me"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mix z)
+plugins=(git mix z git-open)
 
 
 # User configuration
@@ -114,4 +114,5 @@ compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 alias gplrnps="git pull -r origin $(current_branch) && git push origin $(current_branch)"
 
-source /Users/maxnunes/Development/invision/InVision_Docker/scripts-native/invision.sh
+# added by travis gem
+[ -f /Users/maxnunes/.travis/travis.sh ] && source /Users/maxnunes/.travis/travis.sh
