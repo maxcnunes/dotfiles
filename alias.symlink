@@ -1,3 +1,4 @@
+alias gopen='git-open'
 alias c='docker-compose'
 alias cb='docker-compose build'
 alias cup='docker-compose up'
