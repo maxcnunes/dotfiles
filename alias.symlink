@@ -66,9 +66,13 @@ finder-hide-hidden-files() {
 	defaults write com.apple.finder AppleShowAllFiles NO
 }
 
-recover-bluetooth() {
+fix-bluetooth() {
 	sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
 	sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
+}
+
+fix-cam() {
+  sudo killall VDCAssistant
 }
 
 reset-dns-cache() {
