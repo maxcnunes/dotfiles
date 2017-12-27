@@ -56,12 +56,12 @@ inoremap <left>  <nop>
 inoremap <right> <nop>
 
 " copy and paste to clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
 
 noremap <silent> <Leader>c :nohl<Return>		" clean search highlight
 
