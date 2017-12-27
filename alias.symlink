@@ -19,6 +19,10 @@ alias grep_exclude_node_modules='grep --exclude-dir="node_modules"'
 alias tm="gtime --format='\n---\n\"%C\" took %e seconds with %P CPU usage\n---\n'"
 alias new_uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
 
+pull_pr() {
+	pr_num=$1
+	git fetch origin refs/pull/$pr_num/head:pr/$pr_num
+}
 
 reload-alias() {
 	if [ -f /vagrant/alias.sh ]; then
