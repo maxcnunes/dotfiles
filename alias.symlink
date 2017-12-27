@@ -1,3 +1,4 @@
+alias vim='mvim -v'
 alias gopen='git-open'
 alias c='docker-compose'
 alias cb='docker-compose build'
