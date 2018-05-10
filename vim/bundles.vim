@@ -1,40 +1,50 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Required:
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Required:
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+  call dein#add('~/.cache/dein')
 
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-Plugin 'joshdick/onedark.vim'			" theme
-Plugin 'tpope/vim-surround'			" surround
-Plugin 'othree/yajs.vim'			" js highlight theme
-Plugin 'othree/es.next.syntax.vim'		" es7 highlight theme
-Plugin 'scrooloose/syntastic'			" linter
-Plugin 'maxcnunes/syntastic-local-eslint.vim'	" use local eslint
-Plugin 'vim-airline/vim-airline'		" status line
-Plugin 'tpope/vim-fugitive'			" git wrapper
-Plugin 'airblade/vim-gitgutter'			" git status
-Plugin 'scrooloose/nerdtree'			" file system explorer
-Plugin 'tpope/vim-commentary'		" commenter
-Plugin 'ctrlpvim/ctrlp.vim' 			" fuzzy file finder
-Plugin 'editorconfig/editorconfig-vim' 		" editor config
-Plugin 'rking/ag.vim'				" search
-Plugin 'Lokaltog/vim-easymotion'		" simple search
-Plugin 'terryma/vim-multiple-cursors'		" multiple cursors
-Plugin 'fatih/vim-go'				" golang
-Plugin 'henrik/vim-qargs' 			" copy quicklist to args
-Plugin 'regedarek/ZoomWin'			" zoom window
-Plugin 'jiangmiao/auto-pairs'			" auto pairs
-Plugin 'chrisbra/csv.vim'			" csv
-Plugin 'dahu/vim-fanfingtastic'			" ft,; improved
-Plugin 'takac/vim-hardtime'			" force stop repeating the basic movement keys
+  " Add or remove your plugins here:
+  call dein#add('joshdick/onedark.vim')
+  call dein#add('tpope/vim-surround')
+  call dein#add('othree/yajs.vim')
+  call dein#add('othree/es.next.syntax.vim')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('maxcnunes/syntastic-local-eslint.vim')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('scrooloose/nerdtree', {'on_cmd': 'NERDTreeToggle'} )
+  call dein#add('tpope/vim-commentary')
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('editorconfig/editorconfig-vim')
+  call dein#add('rking/ag.vim')
+  call dein#add('Lokaltog/vim-easymotion')
+  call dein#add('terryma/vim-multiple-cursors')
+  call dein#add('fatih/vim-go')
+  call dein#add('henrik/vim-qargs')
+  call dein#add('regedarek/ZoomWin')
+  call dein#add('jiangmiao/auto-pairs')
+  call dein#add('chrisbra/csv.vim')
+  call dein#add('dahu/vim-fanfingtastic')
+  call dein#add('takac/vim-hardtime')
+  call dein#add('leafgarland/typescript-vim')
 
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Required:
+filetype plugin indent on
+syntax enable
