@@ -28,5 +28,6 @@ Plug 'chrisbra/csv.vim'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'takac/vim-hardtime'
 Plug 'leafgarland/typescript-vim'
+Plug 'w0rp/ale'
 
 call plug#end()

@@ -1,20 +1,6 @@
 " Configurations of all plugins
 
 """"""""""""""""""""""""""""""
-" syntastic
-""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_loc_list_height = 3				" height
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
-
-""""""""""""""""""""""""""""""
 " vim-airline
 """"""""""""""""""""""""""""""
 set laststatus=2
@@ -94,24 +80,19 @@ highlight SignColumn ctermbg=235
 
 
 """"""""""""""""""""""""""""""
+" ale linter
+""""""""""""""""""""""""""""""
+let g:airline#extensions#ale#enabled = 1 " use airline for ale messages
+let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
+let g:ale_go_gometalinter_options = '--fast'
+" let g:ale_go_gometalinter_options = '--fast --disable=gas --disable=goconst --disable=gocyclo '
+
+""""""""""""""""""""""""""""""
 " vim-go
 """"""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
 let g:go_list_height = 3
-
-let g:syntastic_go_checkers = ['golint', 'govet', 'gometalinter']
-" Only executed on saving a go file
-let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
-" Only executed on :GoMetaLinter
-" let g:syntastic_go_gometalinter_args = ['--enable-all']
-" let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'megacheck']
-
-" Fix showing 2 windows for linter messages
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-let g:go_list_type = "quickfix"
-
 let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_structs = 1
