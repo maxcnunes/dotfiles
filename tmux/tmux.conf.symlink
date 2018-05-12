@@ -91,7 +91,8 @@ set -g renumber-windows on
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # Clean the window
-bind u send-keys -R \; respawn-pane -k \; clear-history
+bind u send-keys -R \; clear-history
+# bind u send-keys -R \; respawn-pane -k \; clear-history
 
 # Unlimited history
 set -g history-limit 999999999
