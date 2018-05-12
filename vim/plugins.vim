@@ -114,6 +114,11 @@ endfunction
 
 autocmd FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
 
+""""""""""""""""""""""""""""""
+" ultisnips - snippets
+""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<tab>"
+
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
 \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
