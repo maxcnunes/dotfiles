@@ -10,13 +10,15 @@ elif [ "$OS" == "linux" ]; then
   sudo apt-get install vim-gnome -y
 fi
 
-ln -fs $dotfiles/vim ~/.vim
+if ! [ -L ~/.vim  ]; then
+  ln -s $dotfiles/vim ~/.vim
+fi
 ln -fs $dotfiles/vim/vimrc ~/.vimrc
 mkdir -p ~/.vim/{.backup,.swap}
 
 echo '==> Installing vim-plug'
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo '==> Installing vim plugins'
 vim +PlugInstall +qall
