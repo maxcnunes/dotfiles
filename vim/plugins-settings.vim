@@ -12,15 +12,6 @@ let g:airline#extensions#tabline#enabled = 1 		" show buffer in tabs
 
 
 """"""""""""""""""""""""""""""
-" ctrlp.vim
-""""""""""""""""""""""""""""""
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_max_files = 600
-let g:ctrlp_max_depth = 5
-noremap <silent> <Leader>bb :CtrlPBuffer<Return>	" open buffer fuzzy list
-
-
-""""""""""""""""""""""""""""""
 " hardtime
 """"""""""""""""""""""""""""""
 let g:hardtime_default_on = 1
@@ -43,12 +34,6 @@ let NERDTreeIgnore = ['tmp']
 """"""""""""""""""""""""""""""
 " Use ag over grep
 let g:agp_rg="ag\ --nogroup\ --nocolor\ --column"
-
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-" ag is fast enough that CtrlP doesn't need to cache
-let g:ctrlp_use_caching = 0
 
 
 """"""""""""""""""""""""""""""
