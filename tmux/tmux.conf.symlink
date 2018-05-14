@@ -99,7 +99,7 @@ set -g history-limit 999999999
 # Plugins configurations
 set -g @online_icon '☁'
 set -g @offline_icon '×'
-set -g @route_to_ping 'www.duckduckgo.com'
+set -g @route_to_ping 'google.com'
 set -g @prefix_highlight_bg 'blue'
 
 # List of plugins
