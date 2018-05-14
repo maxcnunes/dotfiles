@@ -34,10 +34,10 @@ set -g status-fg white
 set -g status-justify centre
 
 set -g status-left-length 150
-set -g status-left "#[fg=colour4 bg=#ffffff bold] #{online_status}  #[fg=#ffffff bg=#000000 none]#[fg=#ffffff bg=colour232 bold] ${USER}@#H #[fg=colour4 bg=#ffffff bold] ∆ "
+set -g status-left "#[fg=colour4 bg=#ffffff bold] #{online_status}  #[fg=#ffffff bg=#000000 none]#[fg=#ffffff bg=colour232 bold] ${USER}@#H #[fg=colour4 bg=#ffffff bold] ⸧ "
 
 set -g status-right-length 150
-set -g status-right "#[fg=colour4 bg=#ffffff bold] ∆ #{prefix_highlight}#[fg=#ffffff bg=#000000] ◴ %a %Y-%m-%d %H:%M"
+set -g status-right "#[fg=colour4 bg=#ffffff bold] ⸦ #{prefix_highlight}#[fg=#ffffff bg=#000000] ◴ %a %Y-%m-%d %H:%M"
 
 #window
 set -g window-status-current-format "#[fg=#000000 bg=#ffffff] #I ⟩ #W "
