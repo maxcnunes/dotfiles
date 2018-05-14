@@ -26,6 +26,7 @@ set textwidth=120
 set relativenumber
 set number
 set hlsearch				" highlight search terms
+set incsearch       " search as you type"
 set list listchars=tab:»·,trail:·	" show hidden tabs and white spaces
 
 set autowrite				" save on buffer switch
