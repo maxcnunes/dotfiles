@@ -9,3 +9,4 @@ bundles/
 .swap
 .undo
 .DS_Store
+vim/autoload/plug.vim
