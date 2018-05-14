@@ -37,6 +37,13 @@ let g:agp_rg="ag\ --nogroup\ --nocolor\ --column"
 
 
 """"""""""""""""""""""""""""""
+" fzf
+""""""""""""""""""""""""""""""
+map <leader>b :Buffers<cr>
+map <leader>f :Files<cr>
+let g:fzf_layout = { 'down': '~20%' }
+
+""""""""""""""""""""""""""""""
 " vim-gitgutter
 """"""""""""""""""""""""""""""
 " dark column
