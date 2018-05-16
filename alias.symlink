@@ -4,20 +4,13 @@ alias dc='docker-compose'
 alias dcb='docker-compose build'
 alias dcup='docker-compose up'
 alias dcr='docker-compose run --service-ports --rm'
-alias dcrl='docker-compose run --service-ports --rm local'
-alias dcrd='docker-compose run --service-ports --rm develop'
-alias dcrt='docker-compose run --rm test'
-alias dcrp='docker-compose run --rm provision'
-alias dcrci='docker-compose run --rm ci'
-alias dcrwt='docker-compose run --rm watchtest'
-alias dcru='docker-compose run --rm update'
 alias dcps='docker-compose ps'
 alias dclogs='docker-compose logs'
-alias gosrc='cd /vagrant/gocode/src/github.com/maxcnunes/'
-alias quizips="~/Development/bravi/bravi-quiz/cloudformation/show-instances-ips.sh"
+alias gosrc='cd $GOPATH/src'
 alias grep_exclude_node_modules='grep --exclude-dir="node_modules"'
 alias tm="gtime --format='\n---\n\"%C\" took %e seconds with %P CPU usage\n---\n'"
 alias new_uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
 pull_pr() {
 	pr_num=$1
@@ -36,27 +29,7 @@ reload-alias() {
 	fi
 }
 
-cleandocker() {
-	docker rmi $(docker images --quiet --filter "dangling=true")
-
-	if [ -f /vagrant/docker-cleanup-volumes.sh ]; then
-		sh /vagrant/docker-cleanup-volumes.sh clean
-	elif [ -f ~/Development/docker-cleanup-volumes.sh ]; then
-		sh ~/Development/docker-cleanup-volumes.sh clean
-	else
-		echo "> docker-cleanup-volumes.sh NOT found"
-	fi
-}
-
-devbox() {
-	COMMAND=$1
-	cd ~/Development/dockito/devbox
-	vagrant up
-	vagrant ssh
-}
-
-
-crm(){
+dcrm(){
 	docker-compose stop $1
 	docker-compose rm --force $1
 }
