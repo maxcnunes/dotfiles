@@ -1,1 +1,1 @@
-npm install -g eslint babel-eslint
+#npm install -g eslint babel-eslint

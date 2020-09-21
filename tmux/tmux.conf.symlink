@@ -2,6 +2,11 @@
 set -g default-terminal "xterm-256color"
 if-shell 'test "$(uname -s)" = Darwin' 'set-option -g default-command "exec reattach-to-user-namespace $SHELL --login"'
 
+# Tmux prefix key
+unbind-key C-b
+set -g prefix 'C-o'
+bind-key 'C-o' send-prefix
+
 # Tabs
 set -g base-index 1
 set -g pane-base-index 1
@@ -11,9 +16,9 @@ set-option -g allow-rename off
 
 # Monitor activity
 setw -g monitor-activity on
-setw -g window-status-activity-attr none
-setw -g window-status-activity-bg colour232
-setw -g window-status-activity-fg colour255
+setw -g window-status-activity-style none
+setw -g window-status-activity-style bg=colour232
+setw -g window-status-activity-style fg=colour255
 
 # # Status bar
 set -g status-position top
@@ -46,11 +51,11 @@ set -g window-status-format "#[fg=#888888 bg=#21252b none] #I ⟩#[fg=#ffffff] #
 set -g window-status-separator ""
 
 # Message bar
-set -g message-bg colour232
-set -g message-fg colour255
+set -g message-style bg=colour232
+set -g message-style fg=colour255
 
 # Style pane borders
-set -g pane-border-fg colour238
+set -g pane-border-style fg=colour238
 
 # Start at 1 rather than 0
 set -g base-index 1
@@ -60,8 +65,12 @@ bind-key c new-window -c "#{pane_current_path}"
 bind-key % split-window -h -c "#{pane_current_path}"
 bind-key '"' split-window -v -c "#{pane_current_path}"
 
+# Move windows
+bind-key S-Left swap-window -t -1\; select-window -t -1
+bind-key S-Right swap-window -t +1\; select-window -t +1
+
 # Highlight active window
-set-window-option -g window-status-current-fg white
+set-window-option -g window-status-current-style fg=white
 
 # vim mode
 set -g @shell_mode 'vi'
@@ -82,6 +91,12 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+
+# # Resize settings
+# resize-pane -D
+# resize-pane -U
+# resize-pane -L
+# resize-pane -R
 
 # When close one window sort it again
 set -g renumber-windows on

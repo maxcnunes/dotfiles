@@ -120,3 +120,5 @@ alias gplrnps="git pull -r origin $(current_branch) && git push origin $(current
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_OPTS='--height 40% --reverse'
+
+source /Users/maxcnunes/Development/invision/InVision_Docker/scripts-native/invision.sh

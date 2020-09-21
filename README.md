@@ -1,6 +1,12 @@
 dotfiles
 ==========
 
+brew cask install zoomus alfred postman
+
+# iTerm manual settings
+* **Theme**: import [One Dark theme](https://github.com/joshdick/onedark.vim/blob/master/term/One%20Dark.itermcolors).
+* **Font**: Set [Monaco for Powerline font](https://github.com/supermarin/powerline-fonts/blob/master/Monaco/Monaco%20for%20Powerline.otf)
+
 It contains the installation and configuration for most of apps I use.
 
 > Important: It is not fully automated yet.

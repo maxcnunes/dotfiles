@@ -10,4 +10,5 @@ elif [ "$OS" == "linux" ]; then
   sudo apt-get install -y tmux
 fi
 
+rm -rf ~/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -40,4 +40,3 @@ set timeoutlen=1000 ttimeoutlen=0	" make escape command faster
 """"""""""""""""""""""""""""""
 set backupdir=~/.vim/.backup/
 set directory=~/.vim/.swap/
-

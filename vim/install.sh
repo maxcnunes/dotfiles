@@ -5,7 +5,7 @@ dotfiles=$HOME/.dotfiles
 source $dotfiles/script/helper.sh
 
 if [ "$OS" == "darwin" ]; then
-  brew install macvim --override-system-vim
+  brew install macvim -- --override-system-vim
 elif [ "$OS" == "linux" ]; then
   sudo apt-get install vim-gnome -y
 fi

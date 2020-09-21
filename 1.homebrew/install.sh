@@ -24,9 +24,6 @@ if [ "$OS" == "darwin" ]; then
   brew update
   brew upgrade
   
-  # Allows install apps with home-brew
-  brew install caskroom/cask/brew-cask
-  
   # Allows install beta versions
-  brew tap caskroom/versions
+  brew tap homebrew/cask-versions
 fi

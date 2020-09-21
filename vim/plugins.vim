@@ -9,8 +9,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
-Plug 'othree/yajs.vim', {'for': 'javascript'}
-Plug 'othree/es.next.syntax.vim', {'for': 'javascript'}
+Plug 'othree/yajs.vim', {'for': ['javascript']}
+Plug 'othree/es.next.syntax.vim', {'for': ['javascript']}
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -29,5 +29,8 @@ Plug 'dahu/vim-fanfingtastic'
 Plug 'takac/vim-hardtime'
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
+" Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()

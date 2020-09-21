@@ -57,6 +57,17 @@ let g:airline#extensions#ale#enabled = 1 " use airline for ale messages
 let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
 let g:ale_go_gometalinter_options = '--fast'
 " let g:ale_go_gometalinter_options = '--fast --disable=gas --disable=goconst --disable=gocyclo '
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+
+
+" \   'typescript': ['prettier', 'eslint'],
+" let g:ale_linters.typescript = ['eslint', 'tsserver']
+" let g:ale_typescript_prettier_use_local_config = 1
+" let g:ale_linters_explicit = 1
 
 """"""""""""""""""""""""""""""
 " vim-go
@@ -101,3 +112,8 @@ vnoremap <silent> # :<C-U>
 \gvy?<C-R><C-R>=substitute(
 \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
 \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+" typescript lint
+" autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+" set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx

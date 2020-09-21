@@ -1,5 +1,4 @@
 alias vim='mvim -v'
-alias gopen='git-open'
 alias dc='docker-compose'
 alias dcb='docker-compose build'
 alias dcup='docker-compose up'
@@ -11,6 +10,11 @@ alias grep_exclude_node_modules='grep --exclude-dir="node_modules"'
 alias tm="gtime --format='\n---\n\"%C\" took %e seconds with %P CPU usage\n---\n'"
 alias new_uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+
+dcrun() {
+	container_name=$1
+	docker-compose run --rm --use-aliases --service-ports $container_name sh
+}
 
 pull_pr() {
 	pr_num=$1
