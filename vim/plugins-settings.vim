@@ -54,25 +54,22 @@ highlight SignColumn ctermbg=235
 " ale linter
 """"""""""""""""""""""""""""""
 let g:airline#extensions#ale#enabled = 1 " use airline for ale messages
-let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
-let g:ale_go_gometalinter_options = '--fast'
-" let g:ale_go_gometalinter_options = '--fast --disable=gas --disable=goconst --disable=gocyclo '
+let g:ale_go_golangci_lint_options = '--fast'
+let g:ale_go_golangci_lint_package = 1
+let g:ale_linters = {
+\   'go': ['golangci-lint'],
+\   'javascript': ['flow-language-server'],
+\}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'css': ['prettier'],
 \}
 
-
-" \   'typescript': ['prettier', 'eslint'],
-" let g:ale_linters.typescript = ['eslint', 'tsserver']
-" let g:ale_typescript_prettier_use_local_config = 1
-" let g:ale_linters_explicit = 1
-
 """"""""""""""""""""""""""""""
 " vim-go
 """"""""""""""""""""""""""""""
-let g:go_fmt_command = "goimports"
+let g:go_imports_autosave = 1
 let g:go_metalinter_autosave = 1
 let g:go_list_height = 3
 let g:go_highlight_methods = 1
