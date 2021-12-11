@@ -10,6 +10,31 @@ alias grep_exclude_node_modules='grep --exclude-dir="node_modules"'
 alias tm="gtime --format='\n---\n\"%C\" took %e seconds with %P CPU usage\n---\n'"
 alias new_uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias gh='github'
+
+# Git aliases and functions
+unalias gcd 2>/dev/null
+gcd() {
+	if git branch | grep -q development; then
+		gco development
+	elif git branch | grep -q develop; then
+		gco development
+	else
+		echo "Not found develop or development branch for this repo"
+		exit 1
+	fi
+}
+unalias grbd 2>/dev/null
+grbd() {
+	if git branch | grep -q development; then
+		grb development
+	elif git branch | grep -q develop; then
+		grb develop
+	else
+		echo "Not found develop or development branch for this repo"
+		exit 1
+	fi
+}
 
 dcrun() {
 	container_name=$1
@@ -72,4 +97,15 @@ if [[ "$USER" == "core" ]]; then
 	source /Users/maxcnunes/Dropbox/dotfiles-secret/alias.sh
 else
 	source ~/Dropbox/dotfiles-secret/alias.sh
+fi
+
+envup () {
+	envfile=$1
+	set -o allexport; source $envfile; set +o allexport
+}
+
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+  # export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 fi

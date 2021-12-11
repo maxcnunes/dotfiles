@@ -22,7 +22,7 @@ ln -sf ~/Dropbox/dotfiles-secret/.tokenizer.json ~/
 ln -sf ~/Dropbox/dotfiles-secret/.sqlectron.json ~/
 
 # find the installers and run them iteratively
-find . -name install.sh -not -path "./script/*" | sort | while read installer ;
+find . -name install.sh -not -path "./script/*" -not -path "./deprecated/*" | sort | while read installer ;
 do
   echo "Installing $installer"
   chmod +x "${installer}"

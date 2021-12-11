@@ -14,8 +14,8 @@
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	br-cleanup = !git branch --merged | grep -v master | xargs -n 1 git branch -d
+	; lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	delete-merged-local-branches = !git branch --merged | grep -Ev '^(\\*|main|master|production|development|develop|dev)' | xargs -n 1 git branch -d
 [color]
         diff = auto
         status = auto
@@ -46,3 +46,8 @@
 	smtpServerPort = 587
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

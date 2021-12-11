@@ -5,6 +5,8 @@ brew cask install zoomus alfred postman
 
 # iTerm manual settings
 * **Theme**: import [One Dark theme](https://github.com/joshdick/onedark.vim/blob/master/term/One%20Dark.itermcolors).
+* **Fix Theme Color:** Open iTerm then go to Preferences>Profiles>Default>Color>ANSI Colors and set Black Normal to
+  `282c34`.
 * **Font**: Set [Monaco for Powerline font](https://github.com/supermarin/powerline-fonts/blob/master/Monaco/Monaco%20for%20Powerline.otf)
 
 It contains the installation and configuration for most of apps I use.
@@ -54,16 +56,21 @@ cd ~/.dotfiles
 
 ## Manual Configurations
 
-Some configurations are easier manually *(or I'm too tired to automate them right now)*.
+### MacOS
 
-## Linux: Gnome extensions from Chrome
+* [Trackpad - three finger drag](https://support.apple.com/en-us/HT204609)
+* [Font](https://gist.github.com/baopham/1838072)
+
+### Linux
+
+### Gnome extensions from Chrome
 
 * [Workspaces to Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/)
 * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 * [Transparent Top Bar](https://extensions.gnome.org/extension/857/transparent-top-bar/)
 * [Dynamic Top Bar](https://extensions.gnome.org/extension/885/dynamic-top-bar/)
 
-## Linux: Terminal Font
+#### Terminal Font
 
 Although the font is automatically download to `~/.fonts`. I could not set automatically the gnome terminal font. So we need to do it manually changing the font to: `SauceCodePro Nerd Font Semibold 10`.
 
@@ -75,3 +82,18 @@ Based on few existig vim configuration projects:
 - [lucascaton/vimfiles](https://github.com/lucascaton/vimfiles)
 - [vinitkumar/.vim](https://github.com/vinitkumar/.vim)
 - [tony/vim-config](https://github.com/tony/vim-config)
+
+
+```
+# https://github.com/alexramirez/mac-setup
+brew install mas
+
+# Magnet
+mas install 441258766
+
+brew cask install slack
+brew cask install codeship/taps/jet
+brew cask install spotify
+brew cask install charles
+brew cask install tableplus
+```

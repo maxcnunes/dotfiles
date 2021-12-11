@@ -24,7 +24,9 @@ let g:hardtime_maxcount = 5
 " nerdtree
 """"""""""""""""""""""""""""""
 noremap <silent> <Leader>t :NERDTreeToggle<Return>	" toggle treeview
-noremap <silent> <Leader>f :NERDTreeFind<Return>	" find file
+" noremap <silent> <Leader>f :NERDTreeFind<Return>	" find file
+" nnoremap <silent> <Leader>f :Ag<Return>
+nnoremap <silent> <Leader>f :Rg<CR>
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp']
 
@@ -32,7 +34,8 @@ let NERDTreeIgnore = ['tmp']
 " silver searcher
 """"""""""""""""""""""""""""""
 " Use ag over grep
-let g:agp_rg="ag\ --nogroup\ --nocolor\ --column"
+" let g:agp_rg="ag\ --nogroup\ --nocolor\ --column"
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
 
 """"""""""""""""""""""""""""""
@@ -41,6 +44,33 @@ let g:agp_rg="ag\ --nogroup\ --nocolor\ --column"
 map <leader>b :Buffers<cr>
 map <leader>f :Files<cr>
 let g:fzf_layout = { 'down': '~20%' }
+
+" use ag for fzf search
+" command! -bang -nargs=* Ag
+"   \ call fzf#vim#grep(
+"   \   'ag --column --numbers --noheading --color --smart-case '.shellescape(<q-args>), 1,
+"   \   fzf#vim#with_preview(), <bang>0)
+
+" command! -bang -nargs=* Ag
+"   \ call fzf#vim#ag(
+"   \   <q-args>,
+"   \   '--hidden',
+"   \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+"   \   <bang>0
+"   \ )
+
+" command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+" command! -bang -nargs=* FzfAg
+"   \ call fzf#vim#ag(<q-args>,
+"   \                 '--ignore "node_modules"',
+"   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+"   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+"   \                 <bang>0)
 
 """"""""""""""""""""""""""""""
 " vim-gitgutter
@@ -63,6 +93,7 @@ let g:ale_linters = {
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
+\   'typescript': ['tslint', 'prettier'],
 \   'css': ['prettier'],
 \}
 

@@ -29,8 +29,8 @@ Plug 'dahu/vim-fanfingtastic'
 Plug 'takac/vim-hardtime'
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
-" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'suy/vim-context-commentstring'
 
 call plug#end()
