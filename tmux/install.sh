@@ -6,6 +6,7 @@ source $dotfiles/script/helper.sh
 
 if [ "$OS" == "darwin" ]; then
   brew install tmux
+  brew install reattach-to-user-namespace
 elif [ "$OS" == "linux" ]; then
   sudo apt-get install -y tmux
 fi

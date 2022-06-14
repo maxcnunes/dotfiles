@@ -5,5 +5,5 @@ dotfiles=$HOME/.dotfiles
 source $dotfiles/script/helper.sh
 
 if [ "$OS" == "darwin" ]; then
-  brew cask install --appdir="/Applications" gitup
+  brew install --cask --appdir="/Applications" gitup
 fi

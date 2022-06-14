@@ -9,25 +9,62 @@ source $dotfiles/script/helper.sh
 
 cd "$(dirname $0)"/..
 
+info () {
+  printf "  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
 if [ "$OS" == "linux" ]; then
   sudo apt-get update
 fi
 
-sh ssh/install.sh
-ssh-add
-
+# Link files
 ln -sf ~/.dotfiles/alias.symlink ~/Development/alias.sh
 ln -sf ~/.dotfiles/sleep.symlink ~/.sleep
 ln -sf ~/Dropbox/dotfiles-secret/.tokenizer.json ~/
 ln -sf ~/Dropbox/dotfiles-secret/.sqlectron.json ~/
 
-# find the installers and run them iteratively
-find . -name install.sh -not -path "./script/*" -not -path "./deprecated/*" | sort | while read installer ;
-do
-  echo "Installing $installer"
-  chmod +x "${installer}"
-  $installer
-done
+# List of libraries and apps to be installed
+deps=(
+  ssh
+  homebrew
+  zsh
+  oh-my-zsh
+  wget
+  nvm
+  osx
+  go
+  tmux
+  silver-search
+  vim
+  docker
+  gitup
+  caffeine
+  chrome
+  firefox
+  1password
+  slack
+  iterm
+  zoomus
+  alfred
+  postman
+  notion
+  mas
+  magnet
+  jet
+  tableplus
+)
 
-# brew install tree
-brew install reattach-to-user-namespace
+for dep in "${deps[@]}"
+do
+  info "$dep"
+
+  installer="./${dep}/install.sh"
+  chmod +x $installer
+  $installer
+
+  success "$dep"
+done

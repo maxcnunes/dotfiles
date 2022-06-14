@@ -5,7 +5,7 @@ dotfiles=$HOME/.dotfiles
 source $dotfiles/script/helper.sh
 
 if [ "$OS" == "darwin" ]; then
-  brew cask install caffeine
+  brew install --cask caffeine
 elif [ "$OS" == "linux" ]; then
   sudo apt-get install -y caffeine
 fi

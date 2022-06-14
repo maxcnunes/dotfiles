@@ -1,14 +1,6 @@
 dotfiles
 ==========
 
-brew cask install zoomus alfred postman
-
-# iTerm manual settings
-* **Theme**: import [One Dark theme](https://github.com/joshdick/onedark.vim/blob/master/term/One%20Dark.itermcolors).
-* **Fix Theme Color:** Open iTerm then go to Preferences>Profiles>Default>Color>ANSI Colors and set Black Normal to
-  `282c34`.
-* **Font**: Set [Monaco for Powerline font](https://github.com/supermarin/powerline-fonts/blob/master/Monaco/Monaco%20for%20Powerline.otf)
-
 It contains the installation and configuration for most of apps I use.
 
 > Important: It is not fully automated yet.
@@ -61,6 +53,17 @@ cd ~/.dotfiles
 * [Trackpad - three finger drag](https://support.apple.com/en-us/HT204609)
 * [Font](https://gist.github.com/baopham/1838072)
 
+#### iTerm manual settings after VIM has been installed:
+* **Theme**:
+  1. Open iTerm then go to `Preferences>Profiles>Default>Colors`
+  1. Import the One Dark theme from `~/.vim/bundles/onedark.vim/term/One Dark.itermcolors`
+  1. Select the One Dark theme after imported
+  1. Fix the theme color in **ANSI Colors** section by setting Black Normal to `282c34`.
+* **Font**:
+  1. Download and install [Monaco for Powerline font](https://github.com/supermarin/powerline-fonts/blob/master/Monaco/Monaco%20for%20Powerline.otf)
+  1. Open iTerm then go to `Preferences>Profiles>Default>Text`
+  1. Select **Monaco for Powerline font**
+
 ### Linux
 
 ### Gnome extensions from Chrome
@@ -82,18 +85,3 @@ Based on few existig vim configuration projects:
 - [lucascaton/vimfiles](https://github.com/lucascaton/vimfiles)
 - [vinitkumar/.vim](https://github.com/vinitkumar/.vim)
 - [tony/vim-config](https://github.com/tony/vim-config)
-
-
-```
-# https://github.com/alexramirez/mac-setup
-brew install mas
-
-# Magnet
-mas install 441258766
-
-brew cask install slack
-brew cask install codeship/taps/jet
-brew cask install spotify
-brew cask install charles
-brew cask install tableplus
-```

@@ -23,4 +23,4 @@ chsh -s $(echo $ZSH_BIN)
 # Maybe is because the /etc/shells file has an invalid path.
 
 # Link zsh settings file to the home
-ln -sf ~/.dotfiles/3.zsh/zshrc.symlink ~/.zshrc
+ln -sf ~/.dotfiles/zsh/zshrc.symlink ~/.zshrc

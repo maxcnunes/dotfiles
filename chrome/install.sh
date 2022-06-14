@@ -6,7 +6,7 @@ source $dotfiles/script/helper.sh
 
 if [ "$OS" == "darwin" ]; then
   if ! ls /Applications/ | grep -q Chrome; then
-    brew cask install --appdir="/Applications" google-chrome
+    brew install --cask --appdir="/Applications" google-chrome
   fi
 elif [ "$OS" == "linux" ]; then
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

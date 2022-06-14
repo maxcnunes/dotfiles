@@ -10,11 +10,15 @@ export NVM_DIR="$HOME/.nvm"
 mkdir -p $NVM_DIR
 
 # Force load nvm immeditially
-source $(brew --prefix nvm)/nvm.sh
+# Disables temporaly error handler for this script especifically.
+set +e
+\. "$(brew --prefix nvm)/nvm.sh"
+set -e
 
 # Install latest NodeJS
 nvm install node
 
 # Node modules
-npm install -g diff-so-fancy
+npm install --global diff-so-fancy
 npm install --global git-open
+#npm install -g eslint babel-eslint
