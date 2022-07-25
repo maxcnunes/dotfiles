@@ -42,7 +42,7 @@ set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 " fzf
 """"""""""""""""""""""""""""""
 map <leader>b :Buffers<cr>
-map <leader>f :Files<cr>
+map <leader>f :GFiles<cr>
 let g:fzf_layout = { 'down': '~20%' }
 
 " use ag for fzf search

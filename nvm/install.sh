@@ -17,8 +17,9 @@ set -e
 
 # Install latest NodeJS
 nvm install node
+nvm alias default node
 
 # Node modules
 npm install --global diff-so-fancy
 npm install --global git-open
-#npm install -g eslint babel-eslint
+npm install --global yarn
