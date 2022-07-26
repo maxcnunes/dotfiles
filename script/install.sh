@@ -21,6 +21,9 @@ if [ "$OS" == "linux" ]; then
   sudo apt-get update
 fi
 
+# Create Development folder
+mkdir -p ~/Development
+
 # Link files
 ln -sf ~/.dotfiles/alias.symlink ~/Development/alias.sh
 ln -sf ~/.dotfiles/sleep.symlink ~/.sleep

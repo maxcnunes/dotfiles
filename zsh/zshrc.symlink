@@ -97,10 +97,14 @@ export PATH=$PATH:$GOROOT/bin
 
 source ~/Development/alias.sh
 
+# Load homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Load NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+NVM_ROOT=$(brew --prefix nvm)
+[ -s "${NVM_ROOT}/nvm.sh" ] && . "${NVM_ROOT}/nvm.sh"  # This loads nvm
+[ -s "${NVM_ROOT}/etc/bash_completion.d/nvm" ] && . "${NVM_ROOT}/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
@@ -122,4 +126,4 @@ alias gplrnps="git pull -r origin $(current_branch) && git push origin $(current
 
 export FZF_DEFAULT_OPTS='--height 40% --reverse'
 
-source /Users/maxcnunes/Development/invision/InVision_Docker/scripts-native/invision.sh
+# source /Users/maxcnunes/Development/invision/InVision_Docker/scripts-native/invision.sh
