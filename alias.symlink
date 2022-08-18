@@ -1,10 +1,10 @@
 alias vim='mvim -v'
-alias dc='docker-compose'
-alias dcb='docker-compose build'
-alias dcup='docker-compose up'
-alias dcr='docker-compose run --service-ports --rm'
-alias dcps='docker-compose ps'
-alias dclogs='docker-compose logs'
+alias dc='docker compose'
+alias dcb='docker compose build'
+alias dcup='docker compose up'
+alias dcr='docker compose run --service-ports --rm'
+alias dcps='docker compose ps'
+alias dclogs='docker compose logs'
 alias gosrc='cd $GOPATH/src'
 alias grep_exclude_node_modules='grep --exclude-dir="node_modules"'
 alias tm="gtime --format='\n---\n\"%C\" took %e seconds with %P CPU usage\n---\n'"
@@ -38,7 +38,7 @@ grbd() {
 
 dcrun() {
 	container_name=$1
-	docker-compose run --rm --use-aliases --service-ports $container_name sh
+	docker compose run --rm --use-aliases --service-ports $container_name sh
 }
 
 pull_pr() {
@@ -59,8 +59,8 @@ reload-alias() {
 }
 
 dcrm(){
-	docker-compose stop $1
-	docker-compose rm --force $1
+	docker compose stop $1
+	docker compose rm --force $1
 }
 
 
