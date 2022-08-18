@@ -16,8 +16,3 @@ elif [ "$OS" == "linux" ]; then
 fi
 
 mkdir -p ~/Development/go
-
-
-# $ go get golang.org/x/tools/cmd/godoc
-# $ go get golang.org/x/tools/cmd/vet
-# $ go get github.com/golang/lint/golint

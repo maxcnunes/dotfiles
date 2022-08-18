@@ -85,20 +85,13 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.dotfiles/script/helper.sh
 
-if [[ "$OS" == "darwin" ]]; then
-  export GOROOT=/usr/local/opt/go/libexec
-elif [[ "$OS" == "linux" ]]; then
-  export GOROOT=/usr/local/go
-fi
+# Load homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export GOPATH=$HOME/Development/go
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
 
 source ~/Development/alias.sh
-
-# Load homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
@@ -106,24 +99,13 @@ NVM_ROOT=$(brew --prefix nvm)
 [ -s "${NVM_ROOT}/nvm.sh" ] && . "${NVM_ROOT}/nvm.sh"  # This loads nvm
 [ -s "${NVM_ROOT}/etc/bash_completion.d/nvm" ] && . "${NVM_ROOT}/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
 # http://superuser.com/questions/357355/how-can-i-get-controlleft-arrow-to-go-back-one-word-in-iterm2?answertab=votes#tab-top
 bindkey -e
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 
-# teamocil autocompletion
-compctl -g '~/.teamocil/*(:t:r)' teamocil
-
 alias gplrnps="git pull -r origin $(current_branch) && git push origin $(current_branch)"
-
-# added by travis gem
-[ -f /Users/maxnunes/.travis/travis.sh ] && source /Users/maxnunes/.travis/travis.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_OPTS='--height 40% --reverse'
-
-# source /Users/maxcnunes/Development/invision/InVision_Docker/scripts-native/invision.sh
