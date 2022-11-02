@@ -61,6 +61,8 @@ deps=(
   tableplus
 )
 
+brew install diff-so-fancy
+
 for dep in "${deps[@]}"
 do
   info "$dep"

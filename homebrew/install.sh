@@ -17,14 +17,14 @@ if [ "$OS" == "darwin" ]; then
     echo "  Installing Homebrew for you."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
-  
+
   # Install homebrew packages
   # brew install grc coreutils spark
-  
+
   brew doctor
   brew update
   brew upgrade
-  
+
   # Allows install beta versions
   brew tap homebrew/cask-versions
 fi

@@ -54,6 +54,7 @@ plugins=(git mix z git-open)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

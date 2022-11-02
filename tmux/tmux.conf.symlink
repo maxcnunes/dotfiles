@@ -78,8 +78,8 @@ set -g renumber-windows on
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # Clean the window
-# bind u send-keys -R \; clear-history
-bind u send-keys -R \; respawn-pane -k \; clear-history
+# NOTE: do not use "respawn-pane -k", it will refresh the shell session.
+bind u send-keys -R \; clear-history
 
 # Export panel output to a log file
 bind P pipe-pane -o "cat >>~/#W.log" \; display "Toggled logging to ~/#W.log"
