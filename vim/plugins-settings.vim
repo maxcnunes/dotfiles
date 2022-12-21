@@ -101,6 +101,8 @@ let g:ale_fixers = {
 " vim-go
 """"""""""""""""""""""""""""""
 let g:go_imports_autosave = 1
+let g:go_fmt_command="gopls"
+let g:go_gopls_gofumpt=1
 let g:go_metalinter_autosave = 1
 let g:go_list_height = 3
 let g:go_highlight_methods = 1
@@ -123,6 +125,25 @@ function! s:build_go_files()
 endfunction
 
 autocmd FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
+
+" Register go_gopls_local based on the current project.
+let g:go_gopls_local = {}
+
+function! s:setlocal()
+  try
+    let l:olddir = chdir(expand('%:p:h'))
+    let l:dir = trim(system('go list -m -f {{.Dir}}'))
+    if !has_key(g:go_gopls_local, l:dir)
+      let g:go_gopls_local[l:dir] = trim(system('go list -m'))
+    endif
+  catch
+
+  finally
+    call chdir(l:olddir)
+  endtry
+endfunction
+
+autocmd FileType go call s:setlocal()
 
 """"""""""""""""""""""""""""""
 " ultisnips - snippets
