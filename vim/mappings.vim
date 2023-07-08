@@ -32,3 +32,7 @@ nnoremap <leader>bp :bprevious<CR>			" switch to previous buffer
 
 nnoremap <c-c> :noh<return><esc>		" clean last search
 inoremap jk <esc>					" clean last search
+
+" Show syntax info for a type
+map <leader>h :ALEHover<cr>
+map <leader>cc :!flow-coverage-report -i % -f "./node_modules/.bin/flow" -t html && open flow-coverage/index.html<cr> " Run flow-coverage for the current file
