@@ -1,0 +1,15 @@
+-- Neovim configuration examples:
+-- * https://github.com/Integralist/nvim
+-- * https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+-- * https://nvchad.com/docs/features
+-- * https://github.com/shaikzahid0713/.dotfiles/blob/main/nvim/.config/nvim/init.lua
+-- * https://github.com/Allaman/nvim
+
+--require 'maxcnunes.settings'
+--require 'maxcnunes.keymaps'
+--require 'maxcnunes.plugin-lazy'
+--require 'maxcnunes.plugin-telescope'
+--require 'maxcnunes.plugin-whichkey'
+--require 'maxcnunes.plugin-nvim-tree'
+--require 'maxcnunes.plugin-comment'
+--require 'maxcnunes.plugin-go'

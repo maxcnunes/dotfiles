@@ -43,6 +43,7 @@ deps=(
   tmux
   silver-search
   vim
+  nvim
   docker
   gitup
   caffeine
