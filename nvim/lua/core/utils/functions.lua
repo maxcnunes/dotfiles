@@ -5,18 +5,18 @@ local M = {}
 
 -- Check if running on Darwin or Linux
 M.getOS = function()
-  local handle = io.popen("uname -s")
+  local handle = io.popen 'uname -s'
   if handle == nil then
-    vim.notify("Error while opening handler", vim.log.levels.ERROR)
+    vim.notify('Error while opening handler', vim.log.levels.ERROR)
     return
   end
-  local uname = handle:read("*a")
+  local uname = handle:read '*a'
   handle:close()
-  uname = uname:gsub("%s+", "")
-  if uname == "Darwin" then
-    return "Darwin"
-  elseif uname == "Linux" then
-    return "Linux"
+  uname = uname:gsub('%s+', '')
+  if uname == 'Darwin' then
+    return 'Darwin'
+  elseif uname == 'Linux' then
+    return 'Linux'
   else
     return
   end
@@ -47,7 +47,7 @@ end
 
 -- Check if a variable is not empty nor nil
 M.isNotEmpty = function(s)
-  return s ~= nil and s ~= ""
+  return s ~= nil and s ~= ''
 end
 
 --- Check if path exists
@@ -57,11 +57,11 @@ end
 
 -- Return telescope files command
 M.project_files = function()
-  local path = vim.loop.cwd() .. "/.git"
+  local path = vim.loop.cwd() .. '/.git'
   if M.path_exists(path) then
-    return "Telescope git_files"
+    return 'Telescope git_files'
   else
-    return "Telescope find_files"
+    return 'Telescope find_files'
   end
 end
 
@@ -70,34 +70,34 @@ M.toggle_qf = function()
   local windows = fn.getwininfo()
   local qf_exists = false
   for _, win in pairs(windows) do
-    if win["quickfix"] == 1 then
+    if win['quickfix'] == 1 then
       qf_exists = true
     end
   end
   if qf_exists == true then
-    cmd("cclose")
+    cmd 'cclose'
     return
   end
   if M.isNotEmpty(fn.getqflist()) then
-    cmd("copen")
+    cmd 'copen'
   end
 end
 
 -- toggle colorcolumn
 M.toggle_colorcolumn = function()
-  local value = vim.api.nvim_get_option_value("colorcolumn", {})
-  if value == "" then
-    M.notify("Enable colocolumn", 1, "functions.lua")
-    vim.api.nvim_set_option_value("colorcolumn", "79", {})
+  local value = vim.api.nvim_get_option_value('colorcolumn', {})
+  if value == '' then
+    M.notify('Enable colocolumn', 1, 'functions.lua')
+    vim.api.nvim_set_option_value('colorcolumn', '79', {})
   else
-    M.notify("Disable colocolumn", 1, "functions.lua")
-    vim.api.nvim_set_option_value("colorcolumn", "", {})
+    M.notify('Disable colocolumn', 1, 'functions.lua')
+    vim.api.nvim_set_option_value('colorcolumn', '', {})
   end
 end
 
 -- move over a closing element in insert mode
 M.escapePair = function()
-  local closers = { ")", "]", "}", ">", "'", '"', "`", "," }
+  local closers = { ')', ']', '}', '>', "'", '"', '`', ',' }
   local line = vim.api.nvim_get_current_line()
   local row, col = unpack(vim.api.nvim_win_get_cursor(0))
   local after = line:sub(col + 1, -1)
@@ -123,7 +123,7 @@ end
 function M.get_listed_buffers()
   local buffers = {}
   local len = 0
-  for buffer = 1, vim.fn.bufnr("$") do
+  for buffer = 1, vim.fn.bufnr '$' do
     if vim.fn.buflisted(buffer) == 1 then
       len = len + 1
       buffers[len] = buffer
@@ -140,7 +140,7 @@ end
 
 ---@param on_attach fun(client, buffer)
 function M.on_attach(on_attach)
-  vim.api.nvim_create_autocmd("LspAttach", {
+  vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
       local buffer = args.buf
       local client = vim.lsp.get_client_by_id(args.data.client_id)

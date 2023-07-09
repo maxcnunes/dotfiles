@@ -1,14 +1,14 @@
 local opts = {
-  auxDirectory = ".",
-  bibtexFormatter = "texlab",
+  auxDirectory = '.',
+  bibtexFormatter = 'texlab',
   build = {
     args = {
-      "--keep-intermediates",
-      "--keep-logs",
-      "--synctex",
-      "%f",
+      '--keep-intermediates',
+      '--keep-logs',
+      '--synctex',
+      '%f',
     },
-    executable = "tectonic",
+    executable = 'tectonic',
     forwardSearchAfter = false,
     onSave = false,
   },
@@ -16,7 +16,7 @@ local opts = {
   diagnosticsDelay = 300,
   formatterLineLength = 80,
   forwardSearch = { args = {} },
-  latexFormatter = "latexindent",
+  latexFormatter = 'latexindent',
   latexindent = { modifyLineBreaks = false },
 }
 

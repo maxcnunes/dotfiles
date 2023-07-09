@@ -1,43 +1,43 @@
-local settings = require("core.settings")
+local settings = require 'core.settings'
 
-if settings.theme == "nightfox" then
+if settings.theme == 'nightfox' then
   return {
-    "EdenEast/nightfox.nvim",
+    'EdenEast/nightfox.nvim',
     config = function()
-      require("core.plugins.themes.nightfox")
+      require 'core.plugins.themes.nightfox'
     end,
   }
-elseif settings.theme == "tundra" then
+elseif settings.theme == 'tundra' then
   return {
-    "sam4llis/nvim-tundra",
+    'sam4llis/nvim-tundra',
     config = function()
-      require("core.plugins.themes.tundra")
+      require 'core.plugins.themes.tundra'
     end,
   }
-elseif settings.theme == "tokyonight" then
+elseif settings.theme == 'tokyonight' then
   return {
-    "folke/tokyonight.nvim",
-    branch = "main",
+    'folke/tokyonight.nvim',
+    branch = 'main',
     config = function()
-      require("core.plugins.themes.tokyonight")
+      require 'core.plugins.themes.tokyonight'
     end,
   }
-elseif settings.theme == "kanagawa" then
+elseif settings.theme == 'kanagawa' then
   return {
-    "rebelot/kanagawa.nvim",
+    'rebelot/kanagawa.nvim',
     config = function()
-      require("lua.core.plugins.themes.kanagawa")
+      require 'lua.core.plugins.themes.kanagawa'
     end,
   }
-elseif settings.theme == "oxocarbon" then
+elseif settings.theme == 'oxocarbon' then
   return {
-    "nyoom-engineering/oxocarbon.nvim",
+    'nyoom-engineering/oxocarbon.nvim',
     config = function()
-      vim.opt.background = "dark" -- set this to dark or light
-      vim.cmd("colorscheme oxocarbon")
+      vim.opt.background = 'dark' -- set this to dark or light
+      vim.cmd 'colorscheme oxocarbon'
     end,
   }
-elseif settings.theme == "onedark" then
+elseif settings.theme == 'onedark' then
   return {
     'navarasu/onedark.nvim',
     priority = 1000,
@@ -47,10 +47,10 @@ elseif settings.theme == "onedark" then
   }
 else
   return {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    'catppuccin/nvim',
+    name = 'catppuccin',
     config = function()
-      require("core.plugins.themes.catppuccin")
+      require 'core.plugins.themes.catppuccin'
     end,
   }
 end

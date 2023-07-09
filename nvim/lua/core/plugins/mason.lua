@@ -1,17 +1,20 @@
-local settings = require("core.settings")
+local settings = require 'core.settings'
 
+-- Mason is a plugin that allows you to easily manage external editor
+-- tooling such as LSP servers, DAP servers, linters, and formatters
+-- through a single interface.
 local M = {
-  "williamboman/mason.nvim",
-  event = "VeryLazy",
+  'williamboman/mason.nvim',
+  event = 'VeryLazy',
   dependencies = {
-    { "williamboman/mason-lspconfig.nvim", module = "mason" },
+    { 'williamboman/mason-lspconfig.nvim', module = 'mason' },
   },
   config = function()
     -- install_root_dir = path.concat({ vim.fn.stdpath("data"), "mason" }),
-    require("mason").setup()
+    require('mason').setup()
 
     -- ensure tools (except LSPs) are installed
-    local mr = require("mason-registry")
+    local mr = require 'mason-registry'
     local function install_ensured()
       for _, tool in ipairs(settings.tools) do
         local p = mr.get_package(tool)
@@ -27,7 +30,7 @@ local M = {
     end
 
     -- install LSPs
-    require("mason-lspconfig").setup({ ensure_installed = settings.lsp_servers })
+    require('mason-lspconfig').setup { ensure_installed = settings.lsp_servers }
   end,
 }
 
