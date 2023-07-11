@@ -1,5 +1,5 @@
 local opts = {
-  language = 'de-DE',
+  language = 'en-US',
 }
 
 return opts

@@ -6,7 +6,7 @@ local required_programs = {
   python3 = 'Some Python related features might not work',
   -- cargo = "Some Rust related features might not work",
   -- trash = "Neo-tree requires 'trash-cli' to be able to move files to the trash",
-  tectonic = 'Latex build command will not work',
+  -- tectonic = 'Latex build command will not work',
   rg = 'a highly recommended grep alternative (ripgrep is the package name)',
   fd = 'a highly recommended find alternative',
 }

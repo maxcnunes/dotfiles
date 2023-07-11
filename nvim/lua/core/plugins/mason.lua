@@ -5,7 +5,6 @@ local settings = require 'core.settings'
 -- through a single interface.
 local M = {
   'williamboman/mason.nvim',
-  event = 'VeryLazy',
   dependencies = {
     { 'williamboman/mason-lspconfig.nvim', module = 'mason' },
   },
@@ -23,6 +22,7 @@ local M = {
         end
       end
     end
+
     if mr.refresh then
       mr.refresh(install_ensured)
     else

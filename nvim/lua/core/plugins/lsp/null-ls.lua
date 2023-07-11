@@ -3,13 +3,9 @@ local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 nls.setup {
   sources = {
-    nls.builtins.formatting.stylua.with {
-      extra_args = { '--indent-type', 'Spaces', '--indent-width', '2' },
-    },
+    nls.builtins.formatting.stylua,
     nls.builtins.diagnostics.eslint_d,
-    nls.builtins.formatting.prettier.with {
-      extra_args = { '--single-quote', 'false' },
-    },
+    nls.builtins.formatting.prettier,
     nls.builtins.formatting.terraform_fmt,
     nls.builtins.formatting.black,
     nls.builtins.formatting.goimports,
@@ -25,6 +21,8 @@ nls.setup {
   },
   on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>tF', "<cmd>lua require('core.plugins.lsp.utils').toggle_autoformat()<cr>", { desc = 'Toggle format on save' })
+
+    -- Configure to auto-format on saving a file
     if client.supports_method 'textDocument/formatting' then
       vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
       vim.api.nvim_create_autocmd('BufWritePre', {
