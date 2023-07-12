@@ -78,6 +78,18 @@
 local utils = require 'core.utils.functions'
 local map = vim.keymap.set
 
+-- disable arrow keys on normal and insert mode
+map({ 'n', 'i' }, '<up>', '', { noremap = true })
+map({ 'n', 'i' }, '<down>', '', { noremap = true })
+map({ 'n', 'i' }, '<left>', '', { noremap = true })
+map({ 'n', 'i' }, '<right>', '', { noremap = true })
+
+-- copy and paste to clipboard
+map('v', ',y', '"+y', { silent = true, noremap = true, desc = 'Copy to system clipboard (on yank)' })
+map('v', ',d', '"+d', { silent = true, noremap = true, desc = 'Copy to system clipboard (on delete)' })
+map({ 'n', 'v' }, ',p', '"+p', { silent = true, noremap = true, desc = ' Paste from system clipboard' })
+map({ 'n', 'v' }, ',P', '"+P', { silent = true, noremap = true, desc = 'Paste from system clipboard (before position)' })
+
 -- Remap for dealing with visual line wraps
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
@@ -85,10 +97,6 @@ map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 -- better indenting
 map('v', '<', '<gv')
 map('v', '>', '>gv')
-
--- paste over currently selected text without yanking it
-map('v', 'p', '"_dp')
-map('v', 'P', '"_dP')
 
 -- switch buffer
 map('n', '<tab>', '<cmd>bnext<cr>', { desc = 'Next buffer' })

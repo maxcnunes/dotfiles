@@ -14,7 +14,7 @@ if utils.isNotEmpty(settings.grepprg) then
 end
 
 o.backup = false -- creates a backup file
-o.clipboard = 'unnamedplus' -- keep in sync with the system clipboard
+o.clipboard = '' --  do not use the system clipboard for normal yank and delete actions
 o.completeopt = 'menu,menuone,noselect' -- A comma separated list of options for Insert mode completion
 o.conceallevel = 0 -- so that `` is visible in markdown files
 o.confirm = true -- confirm to save changes before exiting modified buffer

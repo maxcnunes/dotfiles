@@ -28,7 +28,6 @@ for _, lsp in ipairs(settings.lsp_servers) do
         config.settings.python.pythonPath = utils.get_python_path(config.root_dir)
       end
     end,
-    -- filetypes = filetypes,
     capabilities = capabilities,
     flags = { debounce_text_changes = 150 },
     settings = {
