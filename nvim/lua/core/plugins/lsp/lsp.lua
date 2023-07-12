@@ -21,13 +21,6 @@ for _, lsp in ipairs(settings.lsp_servers) do
     goto continue
   end
 
-  -- -- print('lsp_servers ' .. lsp)
-  -- local filetypes = {}
-  -- if lsp == 'typescript' then
-  --   print('SETUP ' .. lsp)
-  --   filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' }
-  -- end
-
   -- NOTE: It uses the default configuration for each server from nvim-lspconfig.
   nvim_lsp[lsp].setup {
     before_init = function(_, config)
@@ -45,18 +38,13 @@ for _, lsp in ipairs(settings.lsp_servers) do
       redhat = { telemetry = { enabled = false } },
       texlab = lsp_settings.tex,
       yaml = lsp_settings.yaml,
-      -- flow = {
-      --   cmd = { 'yarn', 'flow', 'lsp' },
-      -- },
     },
   }
   ::continue::
 end
 
 nvim_lsp.flow.setup {
-  -- cmd = { 'yarn', 'flow', 'lsp' },
   capabilities = capabilities,
-  -- on_attach = on_attach,
 }
 
 vim.filetype.add {
@@ -64,14 +52,31 @@ vim.filetype.add {
     ['.*.js'] = {
       priority = math.huge,
       function(_, bufnr)
-        -- TODO: Keep looking until there are not more lines commented out
-        local content = vim.filetype.getlines(bufnr, 1)
-        -- print '****filetype check content' .. content
-        if vim.filetype.matchregex(content, '^// @flow') then
-          print '****filetype flow'
+        -- Check all the top commented lines if there is any with a Flow annotation
+        -- which determines it is a Javascript file with Flow annotations.
+        local isFlowFile = false
+
+        -- Check only the top 10 lines
+        local lines = vim.filetype.getlines(bufnr, 1, 10)
+
+        for i, content in pairs(lines) do
+          if content == '' then
+            break
+          end
+
+          if vim.filetype.matchregex(content, '^// @flow') then
+            isFlowFile = true
+            break
+          end
+
+          if vim.filetype.matchregex(content, '^// @noflow') then
+            break
+          end
+        end
+
+        if isFlowFile then
           return 'javascriptreact'
         else
-          print '****filetype js'
           return 'javascript'
         end
       end,
@@ -80,4 +85,3 @@ vim.filetype.add {
 }
 
 vim.treesitter.language.register('tsx', 'javascriptreact')
--- vim.treesitter.language.register('js', 'javascriptreact')
