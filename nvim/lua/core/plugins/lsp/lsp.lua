@@ -47,30 +47,29 @@ nvim_lsp.flow.setup {
   capabilities = capabilities,
 }
 
+-- NOTE: In order to support Flow language properly, it needs to use jsx filetype.
+-- https://github.com/nvim-treesitter/nvim-treesitter/issues/3350
 vim.filetype.add {
   pattern = {
     ['.*.js'] = {
       priority = math.huge,
       function(_, bufnr)
-        -- Check all the top commented lines if there is any with a Flow annotation
-        -- which determines it is a Javascript file with Flow annotations.
+        -- Check the top 10 commented lines if there is any with a Flow annotation
+        -- which determines it is a Javascript file with Flow type checking support.
         local isFlowFile = false
 
-        -- Check only the top 10 lines
         local lines = vim.filetype.getlines(bufnr, 1, 10)
 
-        for i, content in pairs(lines) do
-          if content == '' then
-            break
-          end
+        for _, content in pairs(lines) do
+          if content ~= '' then
+            if vim.filetype.matchregex(content, '^// @flow') or vim.filetype.matchregex(content, '^/* @flow') then
+              isFlowFile = true
+              break
+            end
 
-          if vim.filetype.matchregex(content, '^// @flow') then
-            isFlowFile = true
-            break
-          end
-
-          if vim.filetype.matchregex(content, '^// @noflow') then
-            break
+            if vim.filetype.matchregex(content, '^// @noflow') or vim.filetype.matchregex(content, '^/* @noflow') then
+              break
+            end
           end
         end
 
