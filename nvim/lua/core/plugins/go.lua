@@ -82,7 +82,7 @@ local M = {
       lsp_codelens = true, -- set to false to disable codelens, true by default
       lsp_keymaps = false, -- set to false to disable gopls/lsp keymap
       lsp_diag_hdlr = true, -- hook lsp diag handler
-      lsp_diag_virtual_text = { space = 0, prefix = icons.arrows.Diamond }, -- virtual text setup
+      -- lsp_diag_virtual_text = { space = 0, prefix = icons.arrows.Diamond }, -- virtual text setup
       lsp_diag_signs = true,
       lsp_diag_update_in_insert = true,
       lsp_document_formatting = false,
@@ -102,7 +102,7 @@ local M = {
         -- default: false
         show_variable_name = true,
         -- prefix for parameter hints
-        parameter_hints_prefix = ' ',
+        -- parameter_hints_prefix = ' ',
         show_parameter_hints = true,
         -- prefix for all the other hints (type, chaining)
         other_hints_prefix = '=> ',
