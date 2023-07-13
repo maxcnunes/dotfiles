@@ -7,6 +7,7 @@ local M = {
     'nvim-telescope/telescope-symbols.nvim',
     'nvim-telescope/telescope-file-browser.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
+    'nvim-telescope/telescope-project.nvim',
     'ptethng/telescope-makefile',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     'nvim-lua/plenary.nvim',
@@ -69,7 +70,7 @@ local M = {
       override_file_sorter = true,
       case_mode = 'smart_case',
     }
-    telescope.load_extension 'projects'
+    telescope.load_extension 'project'
     telescope.load_extension 'zoxide'
     telescope.load_extension 'heading'
     telescope.load_extension 'ui-select'
