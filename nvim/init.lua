@@ -20,3 +20,4 @@ require 'core.autocmd'
 -- * https://github.com/shaikzahid0713/.dotfiles/blob/main/nvim/.config/nvim/init.lua
 -- * https://github.com/Allaman/nvim
 -- * https://github.com/buschco/.dotfiles/blob/main/nvim/init.lua
+-- * https://github.com/ecosse3/nvim

@@ -1,3 +1,6 @@
+-- TODO: Keep all mappings possible in this module
+-- Example https://github.com/dkarter/dotfiles/blob/master/config/nvim/lua/core/mappings.lua
+
 --local opts = { noremap = true, silent = true }
 --
 --local term_opts = { silent = true }
