@@ -87,7 +87,6 @@ M.treesitter_ensure_installed = {
   'html',
   -- 'java',
   'javascript',
-  -- 'javascriptflow',
   'typescript',
   'json',
   'kotlin',
@@ -132,12 +131,14 @@ M.tools = {
   'prettier',
   'stylua',
   'shfmt',
+  'codespell',
   -- Linter
   'eslint_d',
   'shellcheck',
   'tflint',
   'yamllint',
   'ruff',
+  'checkmake', -- TODO: add package to mason registry
   -- DAP
   'debugpy',
   'codelldb',
