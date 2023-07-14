@@ -9,7 +9,6 @@ local M = {
     'hrsh7th/cmp-calc',
     'lukas-reineke/cmp-rg',
     'hrsh7th/cmp-nvim-lsp-signature-help',
-    'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip', -- Snipts for lua language
   },
   config = function()

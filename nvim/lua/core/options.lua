@@ -1,3 +1,5 @@
+-- NOTE: To see what an option is set to execute :lua = vim.o.<name>
+
 local settings = require 'core.settings'
 local utils = require 'core.utils.functions'
 local o = vim.opt

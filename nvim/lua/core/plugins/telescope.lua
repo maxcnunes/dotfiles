@@ -20,7 +20,7 @@ local M = {
     { '<leader>sh', '<cmd>Telescope heading<cr>', desc = 'Headings' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = 'Keymaps' },
     { '<leader>sO', '<cmd>Telescope vim_options<cr>', desc = 'Vim Options' },
-    { '<leader>sp', '<cmd>Telescope projects<cr>', desc = 'Projects' },
+    { '<leader>sp', '<cmd>Telescope project<cr>', desc = 'Projects' },
     { '<leader>sR', '<cmd>Telescope registers<cr>', desc = 'Registers' },
     { '<leader>ss', '<cmd>Telescope grep_string<cr>', desc = 'Text under cursor' },
     { '<leader>sS', '<cmd>Telescope symbols<cr>', desc = 'Emoji' },
@@ -70,15 +70,6 @@ local M = {
       override_file_sorter = true,
       case_mode = 'smart_case',
     }
-    telescope.load_extension 'project'
-    telescope.load_extension 'zoxide'
-    telescope.load_extension 'heading'
-    telescope.load_extension 'ui-select'
-    telescope.load_extension 'make'
-    if settings.enable_noice then
-      telescope.load_extension 'noice'
-    end
-    telescope.load_extension 'fzf'
 
     telescope.setup {
       extensions = {
@@ -185,6 +176,17 @@ local M = {
         set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
       },
     }
+
+    -- Load all used extensions
+    telescope.load_extension 'project'
+    telescope.load_extension 'zoxide'
+    telescope.load_extension 'heading'
+    telescope.load_extension 'ui-select'
+    telescope.load_extension 'make'
+    if settings.enable_noice then
+      telescope.load_extension 'noice'
+    end
+    telescope.load_extension 'fzf'
   end,
 }
 

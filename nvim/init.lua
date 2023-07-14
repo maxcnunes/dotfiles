@@ -1,7 +1,7 @@
 -- References to ./lua/
 
 -- Check prerequisites
-require 'core.checks'
+-- require 'core.checks'
 -- Load global functions
 require 'core.globals'
 -- Plugin management via lazy
