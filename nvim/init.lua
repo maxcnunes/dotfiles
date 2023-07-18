@@ -22,3 +22,6 @@ require 'core.autocmd'
 -- * https://github.com/buschco/.dotfiles/blob/main/nvim/init.lua
 -- * https://github.com/ecosse3/nvim
 -- * https://github.com/Integralist/nvim
+-- * https://github.com/ThePrimeagen/init.lua
+-- * https://github.com/tjdevries/config_manager
+-- * https://github.com/abzcoding/lvim

@@ -5,10 +5,11 @@ local utils = require 'core.utils.functions'
 local o = vim.opt
 local fn = vim.fn
 
+-- Configure the status line visibility
 if settings.global_statusline then
-  o.laststatus = 3
+  o.laststatus = 3 -- always
 else
-  o.laststatus = 2
+  o.laststatus = 2 -- only if there are at least two windows
 end
 
 if utils.isNotEmpty(settings.grepprg) then

@@ -1,5 +1,7 @@
 local settings = require 'core.settings'
 
+-- Highly experimental plugin that completely replaces the UI
+-- for messages, cmdline and the popupmenu.
 local M = {
   'folke/noice.nvim',
   event = 'VeryLazy',

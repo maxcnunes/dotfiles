@@ -197,4 +197,9 @@ wk.register({
   s = { 'Search' },
   w = { 'Windows' },
   z = { 'Spelling' },
+  -- Harpoon
+  -- h = {
+  --   name: "Harpoon",
+  --   ["1"]: "Go to 1"
+  -- }
 }, { prefix = '<leader>', mode = 'n', {} })

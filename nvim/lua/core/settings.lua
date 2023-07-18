@@ -64,7 +64,8 @@ M.list = false
 -- which list chars to schow
 M.listchars = 'eol:¬,tab:>·,trail:~,extends:>,precedes:<'
 -- Noice heavily changes the Neovim UI ...
-M.enable_noice = true
+-- NOTE: Disabled it for now, as noice was freezing Neovim very often
+M.enable_noice = false
 -- Number of recent files shown in dashboard
 -- 0 disables showing recent files
 M.dashboard_recent_files = 5
@@ -132,13 +133,17 @@ M.tools = {
   'stylua',
   'shfmt',
   'codespell',
+  'yamlfmt',
+  'fixjson',
+  'write-good',
   -- Linter
   'eslint_d',
   'shellcheck',
   'tflint',
   'yamllint',
   'ruff',
-  'checkmake', -- TODO: add package to mason registry
+  'goimports-reviser',
+  -- 'checkmake', -- TODO: add package to mason registry
   -- DAP
   'debugpy',
   'codelldb',
