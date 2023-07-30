@@ -1,5 +1,8 @@
 local M = {
   'akinsho/nvim-toggleterm.lua',
+  -- Temporary disabled, neovim is freezing and I am trying to
+  -- figure out whether or not this plugin was the root cause.
+  enabled = false,
   config = function()
     local map = vim.api.nvim_set_keymap
     local buf_map = vim.api.nvim_buf_set_keymap

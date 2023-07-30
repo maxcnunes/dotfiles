@@ -2,25 +2,25 @@ local M = {
   'nvim-telescope/telescope.nvim',
   cmd = 'Telescope',
   dependencies = {
-    'jvgrootveld/telescope-zoxide',
-    'crispgm/telescope-heading.nvim',
+    -- 'jvgrootveld/telescope-zoxide',
+    -- 'crispgm/telescope-heading.nvim',
     'nvim-telescope/telescope-symbols.nvim',
     'nvim-telescope/telescope-file-browser.nvim',
-    'nvim-telescope/telescope-ui-select.nvim',
-    'nvim-telescope/telescope-project.nvim',
+    -- 'nvim-telescope/telescope-ui-select.nvim',
+    -- 'nvim-telescope/telescope-project.nvim',
     'ptethng/telescope-makefile',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    'nvim-lua/plenary.nvim',
+    -- 'nvim-lua/plenary.nvim',
   },
   keys = {
     -- Search stuff
     { '<leader>sc', '<cmd>Telescope commands<cr>', desc = 'Commands' },
     { '<leader>st', '<cmd>Telescope live_grep<cr>', desc = 'Strings' },
     { '<leader>s?', '<cmd>Telescope help_tags<cr>', desc = 'Help' },
-    { '<leader>sh', '<cmd>Telescope heading<cr>', desc = 'Headings' },
+    -- { '<leader>sh', '<cmd>Telescope heading<cr>', desc = 'Headings' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = 'Keymaps' },
     { '<leader>sO', '<cmd>Telescope vim_options<cr>', desc = 'Vim Options' },
-    { '<leader>sp', '<cmd>Telescope project<cr>', desc = 'Projects' },
+    -- { '<leader>sp', '<cmd>Telescope project<cr>', desc = 'Projects' },
     { '<leader>sR', '<cmd>Telescope registers<cr>', desc = 'Registers' },
     { '<leader>ss', '<cmd>Telescope grep_string<cr>', desc = 'Text under cursor' },
     { '<leader>sS', '<cmd>Telescope symbols<cr>', desc = 'Emoji' },
@@ -37,12 +37,12 @@ local M = {
     { '<leader>gm', '<cmd>Telescope git_commits<cr>', desc = 'Commits' },
     -- files
     { '<leader>fb', '<cmd>Telescope file_browser grouped=true<cr>', desc = 'Filebrowser' },
-    { '<leader>fz', '<cmd>Telescope zoxide list<cr>', desc = 'Zoxide' },
+    -- { '<leader>fz', '<cmd>Telescope zoxide list<cr>', desc = 'Zoxide' },
     { '<leader>ff', '<cmd>' .. require('core.utils.functions').project_files() .. '<cr>', desc = 'Open file' },
     { '<leader>fF', '<cmd>Telescope find_files<cr>', desc = 'Open file (ignore git)' },
     { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'Recent files' },
     -- misc
-    { '<leader>mm', '<cmd>Telescope make<cr>', desc = 'Run make' },
+    -- { '<leader>mm', '<cmd>Telescope make<cr>', desc = 'Run make' },
     { '<leader>mt', '<cmd>Telescope<cr>', desc = 'Telescope' },
     -- Other
     { '<leader>bb', '<cmd>Telescope buffers<cr>', desc = 'Bufferlist' },
@@ -74,9 +74,9 @@ local M = {
     telescope.setup {
       extensions = {
         fzf = fzf_opts,
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown {},
-        },
+        -- ['ui-select'] = {
+        --   require('telescope.themes').get_dropdown {},
+        -- },
         file_browser = {
           theme = 'ivy',
           hijack_netrw = false,
@@ -178,11 +178,11 @@ local M = {
     }
 
     -- Load all used extensions
-    telescope.load_extension 'project'
-    telescope.load_extension 'zoxide'
-    telescope.load_extension 'heading'
-    telescope.load_extension 'ui-select'
-    telescope.load_extension 'make'
+    -- telescope.load_extension 'project'
+    -- telescope.load_extension 'zoxide' -- Remember accessed directories
+    -- telescope.load_extension 'heading' -- List document headings
+    -- telescope.load_extension 'ui-select'
+    -- telescope.load_extension 'make' -- Run Makefile target scripts within neovim with toggleterm.
     if settings.enable_noice then
       telescope.load_extension 'noice'
     end
