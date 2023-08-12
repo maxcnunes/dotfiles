@@ -111,7 +111,6 @@ M.lsp_servers = {
   'dockerls',
   'jsonls',
   'gopls',
-  'ltex',
   'marksman',
   'pyright',
   'lua_ls',
