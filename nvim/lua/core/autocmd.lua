@@ -117,7 +117,7 @@ api.nvim_create_autocmd(
     pattern = { '*.txt', '*.md', '*.tex' },
     callback = function()
       vim.opt.spell = true
-      vim.opt.spelllang = 'en,de'
+      vim.opt.spelllang = 'en' -- english only for now
     end,
   }
 )

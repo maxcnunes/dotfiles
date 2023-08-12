@@ -5,6 +5,9 @@ local utils = require 'core.utils.functions'
 local o = vim.opt
 local fn = vim.fn
 
+-- NOTE: spell and spelllang props are configured only
+-- to specific files in autocmd.lua file.
+
 -- Configure the status line visibility
 if settings.global_statusline then
   o.laststatus = 3 -- always
