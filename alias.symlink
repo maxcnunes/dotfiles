@@ -12,38 +12,9 @@ alias new_uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias gh='github'
 
-# Git aliases and functions
-unalias gcd 2>/dev/null
-gcd() {
-	if git branch | grep -q development; then
-		gco development
-	elif git branch | grep -q develop; then
-		gco development
-	else
-		echo "Not found develop or development branch for this repo"
-		exit 1
-	fi
-}
-unalias grbd 2>/dev/null
-grbd() {
-	if git branch | grep -q development; then
-		grb development
-	elif git branch | grep -q develop; then
-		grb develop
-	else
-		echo "Not found develop or development branch for this repo"
-		exit 1
-	fi
-}
-
 dcrun() {
 	container_name=$1
 	docker compose run --rm --use-aliases --service-ports $container_name sh
-}
-
-pull_pr() {
-	pr_num=$1
-	git fetch origin refs/pull/$pr_num/head:pr/$pr_num
 }
 
 reload-alias() {
@@ -67,30 +38,39 @@ dcrm(){
 # Mac
 # --------------------------
 
-finder-show-hidden-files() {
-	defaults write com.apple.finder AppleShowAllFiles YES
+## find process by executable name and show the working directory as well
+pgrep_pwdx() {
+  for p in $(pgrep $1); do
+    echo "$p | $(pwdx $p)"
+  done
 }
 
-finder-hide-hidden-files() {
-	defaults write com.apple.finder AppleShowAllFiles NO
+## pwdx for Mac https://gist.github.com/tobym/648188
+function pwdx {
+  lsof -a -d cwd -p $1 -n -Fn | awk '/^n/ {print substr($0,2)}'
 }
 
-fix-bluetooth() {
-	sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
-	sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
+get_wifi_ip(){
+	ipconfig getifaddr en0
 }
 
-fix-cam() {
-  sudo killall VDCAssistant
+kill_process_running_at_port() {
+	if [ -z "$1" ]; then
+		echo "Usage: kill_process_running_at_port [numeric port identifier]" >&2
+		return 1
+	fi
+
+	pid=$(lsof -i TCP:$1 | awk '/LISTEN/{print $2}')
+
+	if [ -z "$pid" ]; then
+		echo "No process found on this port"
+		return 1
+	fi
+
+	kill -9 $pid
+	echo "Process killed"
 }
 
-reset-dns-cache() {
-	sudo killall -HUP mDNSResponder
-}
-
-vlc-torrent(){
-	go-peerflix "$1" --vlc
-}
 
 ## -> Load secret configurations
 if [[ "$USER" == "core" ]]; then
