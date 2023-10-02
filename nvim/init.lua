@@ -14,11 +14,11 @@ require 'core.options'
 require 'core.autocmd'
 
 -- Neovim configuration examples:
+-- * https://github.com/Allaman/nvim
 -- * https://github.com/Integralist/nvim
 -- * https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 -- * https://nvchad.com/docs/features
 -- * https://github.com/shaikzahid0713/.dotfiles/blob/main/nvim/.config/nvim/init.lua
--- * https://github.com/Allaman/nvim
 -- * https://github.com/buschco/.dotfiles/blob/main/nvim/init.lua
 -- * https://github.com/ecosse3/nvim
 -- * https://github.com/Integralist/nvim

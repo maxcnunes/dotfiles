@@ -60,7 +60,7 @@ nls.setup {
 
     -- Rust
     nls.builtins.diagnostics.ruff, -- https://github.com/astral-sh/ruff
-    -- nls.builtins.formatting.rustfmt, -- https://github.com/rust-lang/rustfmt
+    nls.builtins.formatting.rustfmt, -- https://github.com/rust-lang/rustfmt
   },
   on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>tF', "<cmd>lua require('core.plugins.lsp.utils').toggle_autoformat()<cr>", { desc = 'Toggle format on save' })

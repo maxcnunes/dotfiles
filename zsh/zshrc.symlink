@@ -60,8 +60,10 @@ PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 # Ensure it uses English for the terminal, even if the system is using a different language.
-# export LANG=en_US.UTF-8
-export LANG=en_US
+export LANG=en_US.UTF-8
+
+# Enale terminal vi mode, so we can use vi commands to edit the current terminal input.
+set -o vi
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -122,3 +124,8 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse'
 export GEM_HOME="$HOME/.gem"
 
 export PATH=$(pyenv root)/shims:$PATH
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export CARGO_HOME=~/.config/cargo
+export RUSTUP_HOME=~/.config/rustup
+source "$CARGO_HOME/env"
