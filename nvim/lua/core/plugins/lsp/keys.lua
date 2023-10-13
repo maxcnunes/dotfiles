@@ -29,7 +29,7 @@ M._keys = {
   { '<leader>lp', vim.diagnostic.goto_prev, desc = 'Prev Diagnostic' },
   { '<leader>la', vim.lsp.buf.code_action, desc = 'Code Action', mode = { 'n', 'v' }, has = 'codeAction' },
   { '<leader>ls', '<cmd>Telescope lsp_document_symbols<cr>', desc = 'Document Symbols' },
-  { '<leader>le', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Document Diagnostics' },
+  -- { '<leader>le', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Document Diagnostics' },
   { '<leader>lq', vim.diagnostic.setloclist, desc = 'Diagnostics in qflist' },
   { '<leader>lws', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', desc = 'Workspace Symbols' },
   { '<leader>lwd', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace Symbols' },
@@ -55,9 +55,9 @@ function M.on_attach(client, buffer)
     if not keys.has or client.server_capabilities[keys.has .. 'Provider'] then
       local opts = Keys.opts(keys)
       opts.has = nil
-      opts.silent = true
+      opts.silent = opts.silent ~= false
       opts.buffer = buffer
-      vim.keymap.set(keys.mode or 'n', keys[1], keys[2], opts)
+      vim.keymap.set(keys.mode or "n", keys.lhs, keys.rhs, opts)
     end
   end
 end
