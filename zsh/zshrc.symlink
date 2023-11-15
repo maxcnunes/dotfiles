@@ -121,7 +121,8 @@ alias gplrnps="git pull -r origin $(current_branch) && git push origin $(current
 
 export FZF_DEFAULT_OPTS='--height 40% --reverse'
 
-export GEM_HOME="$HOME/.gem"
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
 
 export PATH=$(pyenv root)/shims:$PATH
 export VOLTA_HOME="$HOME/.volta"
