@@ -28,7 +28,6 @@ local M = {
       -- if lsp_cfg is a table, merge table with with non-default gopls setup in go/lsp.lua, e.g.
       --   lsp_cfg = {settings={gopls={matcher='CaseInsensitive', ['local'] = 'your_local_module_path', gofumpt = true }}}
       lsp_gofumpt = false, -- true: set default gofmt in gopls format to gofumpt
-      lsp_diag_underline = false,
       lsp_on_attach = function(client, bufnr)
         -- attach my LSP configs keybindings
         require('core.plugins.lsp.keys').on_attach(client, bufnr)
