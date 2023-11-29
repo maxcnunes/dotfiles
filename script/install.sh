@@ -32,7 +32,6 @@ ln -sf ~/Dropbox/dotfiles-secret/.sqlectron.json ~/
 
 # List of libraries and apps to be installed
 deps=(
-  ssh
   homebrew
   zsh
   oh-my-zsh
@@ -50,6 +49,7 @@ deps=(
   chrome
   firefox
   1password
+  1password-cli
   slack
   iterm
   zoomus
