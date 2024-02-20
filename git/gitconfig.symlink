@@ -2,54 +2,56 @@
 #
 
 [hub]
-        protocol = https
+  protocol = https
 [user]
-	name = Max Claus Nunes
-        email = maxcnunes@gmail.com
+  name = Max Claus Nunes
+  email = maxcnunes@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG0LatPsb3KqjZVFbB/cr1LpA268IA0G2VR56ndo41ob
 [credential]
-        helper = osxkeychain
+  helper = osxkeychain
 [alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
-	; lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	delete-merged-local-branches = !git branch --merged | grep -Ev '^(\\*|main|master|production|development|develop|dev)' | xargs -n 1 git branch -d
+  co = checkout
+  promote = !$ZSH/bin/git-promote
+  wtf     = !$ZSH/bin/git-wtf
+  rank-contributors = !$ZSH/bin/git-rank-contributors
+  count   = !git shortlog -sn
+  delete-merged-local-branches = !git branch --merged | grep -Ev '^(\\*|main|master|production|development|develop|dev)' | xargs -n 1 git branch -d
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = ~/.gitignore
+  editor = vim
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [apply]
-        whitespace = nowarn
+  whitespace = nowarn
 [mergetool]
-        keepBackup = false
+  keepBackup = false
 [difftool]
-        prompt = false
+  prompt = false
 [help]
-        autocorrect = 1
+  autocorrect = 1
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-	default = current
+  default = current
 [sendemail]
-	smtpEncryption = tls
-	smtpServer = smtp.gmail.com
-	smtpUser = maxcnunes@gmail.com
-	smtpServerPort = 587
+  smtpEncryption = tls
+  smtpServer = smtp.gmail.com
+  smtpUser = maxcnunes@gmail.com
+  smtpServerPort = 587
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [diff]
   algorithm = patience
+[commit]
+  gpgsign = true
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
