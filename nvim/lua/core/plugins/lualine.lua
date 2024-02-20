@@ -1,6 +1,7 @@
 -- A status line plugin
 local M = {
   'nvim-lualine/lualine.nvim',
+  -- enabled = false,
   -- See `:help lualine.txt`
   opts = {
     options = {
