@@ -10,12 +10,12 @@ bind-key 'C-o' send-prefix
 # Status bar style
 set -g status-position top
 set -g status-justify left
-set -g status-bg '#21252b'
-set -g status-fg '#888888'
-set -g status-left '#[fg=colour232,bg=colour154] ❖ tmux #[fg=colour154,bg=colour235]#[fg=colour235,bg=colour235]'
-set -g status-right '#[fg=blue,bg=colour235]#[fg=colour235,bg=blue]#{prefix_highlight}#[fg=colour235,bg=blue]#[fg=colour238,bg=colour235]#[fg=colour222,bg=colour238] #(whoami) @ #H #[fg=colour154,bg=colour238]#[fg=colour232,bg=colour154] ❖ '
-setw -g window-status-format '#[fg=colour235,bg=colour235]#[default] #I ⟩ #W #[fg=colour235,bg=colour235]'
-setw -g window-status-current-format '#[fg=colour235,bg=colour238]#[fg=colour222,bg=colour238] #I ⟩ #W#F #[fg=colour238,bg=colour235]'
+set -g status-bg 'colour0'
+set -g status-fg 'colour0' # TODO: toto change colour0
+set -g status-left '#[fg=colour232,bg=colour154] ❖ tmux #[fg=colour154,bg=colour0]'
+set -g status-right '#[fg=colour5,bg=colour0]#[fg=colour0,bg=colour5]#{prefix_highlight}#[fg=colour0,bg=colour5]'
+setw -g window-status-format '#[fg=colour0,bg=colour15] #[fg=colour0,bg=colour15]#I. #W#[fg=colour15,bg=colour0]#[fg=colour0,bg=colour0]'
+setw -g window-status-current-format '#[fg=colour0,bg=colour5]#[fg=colour232,bg=colour5] #I. #W#[fg=colour5,bg=colour0]#[fg=colour0,bg=colour0]'
 set -g window-status-separator ""
 set-option -g allow-rename off
 
@@ -28,11 +28,11 @@ setw -g monitor-activity on
 setw -g window-status-activity-style none
 
 # Message bar
-set -g message-style bg=colour232
+set -g message-style bg=colour0
 set -g message-style fg=colour255
 
 # Style pane borders
-set -g pane-border-style fg=colour238
+set -g pane-border-style fg=colour0
 
 # open new windows and panes in the same directory
 bind-key c new-window -c "#{pane_current_path}"
@@ -97,6 +97,11 @@ set -g @tpm_plugins "			\
   tmux-plugins/tmux-copycat		\
   tmux-plugins/tmux-prefix-highlight	\
 "
+
+set -g @prefix_highlight_empty_prompt '❖ ' # default is '' (empty char)
+set -g @prefix_highlight_empty_attr 'fg=colour0,bg=colour5' # default is 'fg=default,bg=default'
+set -g @prefix_highlight_fg 'colour231' # default is 'colour231'
+set -g @prefix_highlight_bg 'colour5'  # default is 'colour04'
 
 # initializes TMUX plugin manager
 run-shell ~/.tmux/plugins/tpm/tpm
