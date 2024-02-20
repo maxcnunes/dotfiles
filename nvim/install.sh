@@ -15,3 +15,6 @@ fi
 if ! [ -L ~/.config/nvim  ]; then
   ln -s $dotfiles/nvim ~/.config/nvim
 fi
+
+echo '==> Installing vim plugins'
+nvim --headless "+Lazy! sync" +qa
