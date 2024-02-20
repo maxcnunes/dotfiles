@@ -50,6 +50,27 @@ function pwdx {
   lsof -a -d cwd -p $1 -n -Fn | awk '/^n/ {print substr($0,2)}'
 }
 
+## Kill program process running in the current working directory.
+kill_process_cwd (){
+  program=$1
+  if [ -z $program ]; then
+    echo "Missing program arg"
+    return 1
+  fi
+
+  for p in $(pgrep $1); do
+    p_path="$(pwdx $p)"
+    if [[ "$p_path" = "$(pwd)" ]]; then
+      echo "Exiting process $p at $p_path"
+      kill "$p"
+      return 0
+    fi
+  done
+
+  echo "Could not find process"
+  return 1
+}
+
 get_wifi_ip(){
 	ipconfig getifaddr en0
 }
