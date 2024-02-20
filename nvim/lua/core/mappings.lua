@@ -140,10 +140,22 @@ map('n', '<leader>tw', function()
   utils.notify('Toggling wrap', vim.log.levels.INFO, 'core.mappings')
   vim.o.wrap = vim.o.wrap == false and true or false
 end, { desc = 'Toggle wrap' })
+
 map('n', '<leader>tc', function()
   utils.notify('Toggling cursorline', vim.log.levels.INFO, 'core.mappings')
   vim.o.cursorline = vim.o.cursorline == false and true or false
 end, { desc = 'Toggle cursorline' })
+
+map('n', '<leader>tm', function()
+  if vim.o.mouse == "" then
+    vim.o.mouse = require('core.settings').mouse
+    utils.notify('Toggling mouse on', vim.log.levels.INFO, 'core.mappings')
+  else
+    vim.o.mouse = ""
+    utils.notify('Toggling mouse off', vim.log.levels.INFO, 'core.mappings')
+  end
+end, { desc = 'Toggle cursorline' })
+
 map('n', '<leader>to', "<cmd>lua require('core.utils.functions').toggle_colorcolumn()<cr>", { desc = 'Toggle colorcolumn' })
 map('n', '<leader>tt', "<cmd>lua require('core.plugins.lsp.utils').toggle_virtual_text()<cr>", { desc = 'Toggle Virtualtext' })
 map('n', '<leader>ts', '<cmd>SymbolsOutline<cr>', { desc = 'Toggle SymbolsOutline' })
