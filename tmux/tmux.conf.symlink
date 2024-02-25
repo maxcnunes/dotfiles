@@ -13,7 +13,7 @@ set -g status-justify left
 set -g status-bg 'colour0'
 set -g status-fg 'colour250'
 set -g status-left '#[fg=colour232,bg=colour154]▏ tmux▕'
-set -g status-right '#[fg=colour235,bg=colour5]▏#{prefix_highlight}▕#[fg=colour0,bg=colour5]'
+set -g status-right '#[fg=colour235,bg=colour11]▏#{prefix_highlight}▕'
 setw -g window-status-format '#[fg=colour235,bg=colour0]▏#[fg=colour250,bg=colour0]#I:#W#[fg=colour235,bg=colour0]▕'
 setw -g window-status-current-format '#[fg=colour235,bg=colour5]▏#[fg=colour232,bg=colour5]#I:#W#[fg=colour235,bg=colour5]▕'
 set -g window-status-separator ""
@@ -99,9 +99,9 @@ set -g @tpm_plugins "			\
 "
 
 set -g @prefix_highlight_empty_prompt '󱪿 ' # default is '' (empty char)
-set -g @prefix_highlight_empty_attr 'fg=colour0,bg=colour5' # default is 'fg=default,bg=default'
-set -g @prefix_highlight_fg 'colour231' # default is 'colour231'
-set -g @prefix_highlight_bg 'colour5'  # default is 'colour04'
+set -g @prefix_highlight_empty_attr 'fg=colour0,bg=colour11' # default is 'fg=default,bg=default'
+set -g @prefix_highlight_fg 'colour235' # default is 'colour231'
+set -g @prefix_highlight_bg 'colour11'  # default is 'colour04'
 
 # initializes TMUX plugin manager
 run-shell ~/.tmux/plugins/tpm/tpm
