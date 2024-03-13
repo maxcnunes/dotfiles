@@ -2,7 +2,7 @@
 local opts = {
   cmd = { 'lua-language-server' },
   format = {
-    enable = false, -- let null-ls handle the formatting
+    enable = false, -- let the plugin used for formatting to handle it
   },
   filetypes = { 'lua' },
   runtime = {

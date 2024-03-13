@@ -135,18 +135,26 @@ M.tools = {
   'codespell',
   'yamlfmt',
   'fixjson',
-  'write-good',
   -- Linter
+  'cpplint',
   'eslint_d',
   'shellcheck',
+  'selene',
   'tflint',
   'yamllint',
   'ruff',
   'goimports-reviser',
-  -- 'checkmake', -- TODO: add package to mason registry
   -- DAP
   'debugpy',
   'codelldb',
+  -- Go
+  'gofumpt',
+  'goimports',
+  'gomodifytags',
+  'golangci-lint',
+  'gotests',
+  'iferr',
+  'impl',
 }
 
 -- enable greping in hidden files

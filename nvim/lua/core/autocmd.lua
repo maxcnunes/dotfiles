@@ -65,7 +65,7 @@ api.nvim_create_autocmd('FileType', {
     'help',
     'man',
     'notify',
-    'null-ls-info',
+    -- 'null-ls-info',
     'qf',
     'PlenaryTestPopup',
     'startuptime',
