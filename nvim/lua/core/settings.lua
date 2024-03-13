@@ -122,6 +122,7 @@ M.lsp_servers = {
   'typst_lsp',
   'yamlls',
   -- 'flow',
+  'clangd',
 }
 
 -- Tools that should be installed by Mason
