@@ -124,6 +124,24 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse'
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
+# export LLVM_PROJECT=$HOME/Development/llvm-project
+# export PATH=$LLVM_PROJECT/build/bin:$PATH
+
+
+# # To use the bundled libc++ please add the following LDFLAGS:
+LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++"
+
+# llvm is keg-only, which means it was not symlinked into /opt/homebrew,
+# because macOS already provides this software and installing another version in
+# parallel can cause all kinds of trouble.
+
+# If you need to have llvm first in your PATH, run:
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+# For compilers to find llvm you may need to set:
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
 export PATH=$(pyenv root)/shims:$PATH
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
