@@ -13,10 +13,10 @@ local M = {
       -- NOTE: is not related to core.plugins.lsp
       -- NOTE: manages LSP on its own
       go = 'go', -- go command, can be go[default] or go1.18beta1
-      goimport = 'gopls', -- goimport command, can be gopls[default] or goimport
+      goimports = 'gopls', -- goimport command, can be gopls[default] or goimport
       fillstruct = 'gopls', -- can be nil (use fillstruct, slower) and gopls
-      gofmt = 'gofumpt', -- gofmt cmd,
-      max_line_len = 120, -- max line length in goline format
+      gofmt = 'gopls', -- gofmt cmd,
+      max_line_len = 0, -- max line length in goline format
       tag_transform = false, -- tag_transfer  check gomodifytags for details
       test_template = '', -- default to testify if not set; g:go_nvim_tests_template  check gotests for details
       test_template_dir = '', -- default to nil if not set; g:go_nvim_tests_template_dir  check gotests for details
@@ -80,7 +80,7 @@ local M = {
       -- if lsp_on_attach is a function: use this function as on_attach function for gopls
       lsp_codelens = true, -- set to false to disable codelens, true by default
       lsp_keymaps = false, -- set to false to disable gopls/lsp keymap
-      diagnostic = {  -- set diagnostic to false to disable vim.diagnostic setup
+      diagnostic = { -- set diagnostic to false to disable vim.diagnostic setup
         hdlr = true, -- hook lsp diag handler
         underline = true,
         -- virtual text setup
