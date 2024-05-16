@@ -13,20 +13,21 @@ return {
     end,
     -- log_level = vim.log.levels.TRACE,
     formatters_by_ft = {
+      -- asm = { 'asmfmt' },
       c = { 'clang_format' },
       go = { 'goimports', 'gofmt' },
       javascript = { 'prettier' },
       javascriptreact = { 'prettier' }, -- used by the Flow language
-      json = { 'prettier' },
+      -- json = { 'prettier' },
       lua = { 'stylua' },
       markdown = { 'prettier' },
       python = { 'isort', 'ruff_format' },
-      rust = { 'ruff_format' }, -- TODO: add back 'rustfmt' once https://github.com/stevearc/conform.nvim/issues/330 has been fixed
-      sh = { 'shfmt' },
+      rust = { 'ruff_format', 'rustfmt' },
+      -- sh = { 'shfmt' },
       terraform = { 'terraform_fmt' },
       tex = { 'latexindent' },
       typst = { 'typstfmt' },
-      yaml = { 'yamlfmt' },
+      -- yaml = { 'yamlfmt' },
     },
   },
   config = function(_, opts)
