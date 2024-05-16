@@ -9,9 +9,11 @@ local M = {
     'mfussenegger/nvim-ts-hint-textobject',
     'windwp/nvim-ts-autotag',
     'nvim-treesitter/playground',
+    'rush-rs/tree-sitter-asm', -- Add nvim better syntax highlight
   },
   config = function()
     local settings = require 'core.settings'
+
     require('nvim-treesitter.configs').setup {
       ensure_installed = settings.treesitter_ensure_installed,
       ignore_install = {}, -- List of parsers to ignore installing

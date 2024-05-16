@@ -4,6 +4,7 @@ local M = {
   dependencies = {
     { 'onsails/lspkind-nvim' },
     { 'folke/neodev.nvim', config = true, lazy = true, ft = 'lua' },
+    { 'rhysd/vim-llvm' }, -- llvm syntax support
   },
   config = function()
     require 'core.plugins.lsp.lsp'

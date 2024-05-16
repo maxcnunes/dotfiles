@@ -103,9 +103,12 @@ M.treesitter_ensure_installed = {
   'toml',
   'vim',
   'yaml',
+  'asm',
 }
 
--- LSPs that should be installed by Mason-lspconfig
+-- LSPs that should be installed by Mason-lspconfig.
+-- Any other lsp not supported by Mason needs to be
+-- setup directly on lsp/lsp.lua module.
 M.lsp_servers = {
   'bashls',
   'dockerls',
@@ -123,6 +126,7 @@ M.lsp_servers = {
   'yamlls',
   -- 'flow',
   'clangd',
+  'asm_lsp',
 }
 
 -- Tools that should be installed by Mason
