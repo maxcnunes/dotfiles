@@ -110,7 +110,7 @@ M.treesitter_ensure_installed = {
 -- Any other lsp not supported by Mason needs to be
 -- setup directly on lsp/lsp.lua module.
 M.lsp_servers = {
-  'bashls',
+  -- 'bashls',
   'dockerls',
   'jsonls',
   'gopls',
@@ -142,7 +142,7 @@ M.tools = {
   -- Linter
   'cpplint',
   'eslint_d',
-  'shellcheck',
+  -- 'shellcheck',
   'selene',
   'tflint',
   'yamllint',
