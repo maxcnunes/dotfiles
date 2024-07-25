@@ -135,36 +135,30 @@ end
 local function create_mapping()
   local wk = require 'which-key'
 
-  wk.register({
-    d = {
-      name = 'Debug',
-      b = { ':lua require("persistent-breakpoints.api").toggle_breakpoint()<cr>', 'Toggle breakpoint (F9)' },
-      B = { ':lua require("persistent-breakpoints.api").set_conditional_breakpoint()<cr>', 'Conditional breakpoint' },
-      D = { ':lua require("persistent-breakpoints.api").clear_all_breakpoints()<cr>', 'Clear breakpoints' },
-      c = { ':lua require("dap").continue()<cr>', 'Start/Continue (F5)' },
-      i = { ':lua require("dap").step_into()<cr>', 'Step Into (F11)' },
-      o = { ':lua require("dap").step_over()<cr>', 'Step Over (F10)' },
-      O = { ':lua require("dap").step_out()<cr>', 'Step Out (S-F11)' },
-      q = { ':lua require("dap").close()<cr>', 'Close Session' },
-      Q = { ':lua require("dap").terminate()<cr>', 'Terminate Session' },
-      p = { ':lua require("dap").pause()<cr>', 'Pause (F6)' },
-      r = { ':lua require("dap").restart_frame()<cr>', 'Restart (C-F5)' },
-      R = { ':lua require("dap").repl.toggle()<cr>', 'Toggle REPL' },
-      s = { ':lua require("dap").run_to_cursor()<cr>', 'Run To Cursor' },
-      ['?'] = {
-        function()
-          require('dapui').eval(nil, { enter = true })
-        end,
-        'Show variable value',
-      },
-
-      -- b = { "<cmd>lua require('dap').toggle_breakpoint(); require('core.plugins.dap.breakpoint').store_breakpoints(true)<cr>", 'Toggle breakpoint' },
-      -- c = { ':DapContinue<CR>', 'Continue' },
-      -- s = { ':lua require("core.plugins.dap.breakpoint").store_breakpoints()<CR>', 'Store breakpoints' },
-      -- l = { ':lua require("core.plugins.dap.breakpoint").load_breakpoints()<CR>', 'Load breakpoints' },
-      u = { ':lua require("dapui").toggle()<CR>', 'Toggle UI' },
+  wk.add {
+    { '<leader>d', group = 'Debug' },
+    {
+      '<leader>d?',
+      function()
+        require('dapui').eval(nil, { enter = true })
+      end,
+      desc = 'Show variable value',
     },
-  }, { prefix = '<leader>', mode = 'n', {} })
+    { '<leader>dB', ':lua require("persistent-breakpoints.api").set_conditional_breakpoint()<cr>', desc = 'Conditional breakpoint' },
+    { '<leader>dD', ':lua require("persistent-breakpoints.api").clear_all_breakpoints()<cr>', desc = 'Clear breakpoints' },
+    { '<leader>dO', ':lua require("dap").step_out()<cr>', desc = 'Step Out (S-F11)' },
+    { '<leader>dQ', ':lua require("dap").terminate()<cr>', desc = 'Terminate Session' },
+    { '<leader>dR', ':lua require("dap").repl.toggle()<cr>', desc = 'Toggle REPL' },
+    { '<leader>db', ':lua require("persistent-breakpoints.api").toggle_breakpoint()<cr>', desc = 'Toggle breakpoint (F9)' },
+    { '<leader>dc', ':lua require("dap").continue()<cr>', desc = 'Start/Continue (F5)' },
+    { '<leader>di', ':lua require("dap").step_into()<cr>', desc = 'Step Into (F11)' },
+    { '<leader>do', ':lua require("dap").step_over()<cr>', desc = 'Step Over (F10)' },
+    { '<leader>dp', ':lua require("dap").pause()<cr>', desc = 'Pause (F6)' },
+    { '<leader>dq', ':lua require("dap").close()<cr>', desc = 'Close Session' },
+    { '<leader>dr', ':lua require("dap").restart_frame()<cr>', desc = 'Restart (C-F5)' },
+    { '<leader>ds', ':lua require("dap").run_to_cursor()<cr>', desc = 'Run To Cursor' },
+    { '<leader>du', ':lua require("dapui").toggle()<CR>', desc = 'Toggle UI' },
+  }
 
   vim.keymap.set('n', '<F5>', require('dap').continue)
   vim.keymap.set('n', '<F10>', require('dap').step_over)
