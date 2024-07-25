@@ -147,11 +147,11 @@ map('n', '<leader>tc', function()
 end, { desc = 'Toggle cursorline' })
 
 map('n', '<leader>tm', function()
-  if vim.o.mouse == "" then
+  if vim.o.mouse == '' then
     vim.o.mouse = require('core.settings').mouse
     utils.notify('Toggling mouse on', vim.log.levels.INFO, 'core.mappings')
   else
-    vim.o.mouse = ""
+    vim.o.mouse = ''
     utils.notify('Toggling mouse off', vim.log.levels.INFO, 'core.mappings')
   end
 end, { desc = 'Toggle mouse' })
@@ -164,54 +164,37 @@ map('n', '<leader>tS', '<cmd>windo set scb!<cr>', { desc = 'Toggle Scrollbind' }
 local wk = require 'which-key'
 
 -- register non leader based mappings
-wk.register {
-  sa = 'Add surrounding',
-  sd = 'Delete surrounding',
-  sh = 'Highlight surrounding',
-  sn = 'Surround update n lines',
-  sr = 'Replace surrounding',
-  sF = 'Find left surrounding',
-  sf = 'Replace right surrounding',
-  st = { "<cmd>lua require('tsht').nodes()<cr>", 'TS hint textobject' },
+wk.add {
+  { 'sF', desc = 'Find left surrounding' },
+  { 'sa', desc = 'Add surrounding' },
+  { 'sd', desc = 'Delete surrounding' },
+  { 'sf', desc = 'Replace right surrounding' },
+  { 'sh', desc = 'Highlight surrounding' },
+  { 'sn', desc = 'Surround update n lines' },
+  { 'sr', desc = 'Replace surrounding' },
+  { 'st', "<cmd>lua require('tsht').nodes()<cr>", desc = 'TS hint textobject' },
 }
 
 -- Register leader based mappings
-wk.register({
-  ['<tab>'] = { '<cmd>e#<cr>', 'Prev buffer' },
-  b = {
-    name = 'Buffers',
-    D = {
-      '<cmd>%bd|e#|bd#<cr>',
-      'Close all but the current buffer',
-    },
-    d = { '<cmd>Bdelete<cr>', 'Close buffer' },
-  },
-  l = { 'LSP' }, -- core.plugins.lsp.keys
-  lw = { 'Workspaces' }, -- core.plugins.lsp.keys
-  f = {
-    name = 'Files',
-    s = { '<cmd>w<cr>', 'Save Buffer' },
-  },
-  m = {
-    name = 'Misc',
-    l = { '<cmd>source ~/.config/nvim/snippets/*<cr>', 'Reload snippets' },
-    p = { '<cmd>Lazy check<cr>', 'Lazy check' },
-  },
-  q = {
-    name = 'Quickfix',
-    j = { '<cmd>cnext<cr>', 'Next Quickfix Item' },
-    k = { '<cmd>cprevious<cr>', 'Previous Quickfix Item' },
-    q = { "<cmd>lua require('core.utils.functions').toggle_qf()<cr>", 'Toggle quickfix list' },
-    t = { '<cmd>TodoQuickFix<cr>', 'Show TODOs' },
-  },
-  t = { name = 'Toggles' },
-  -- hydra heads
-  s = { 'Search' },
-  w = { 'Windows' },
-  z = { 'Spelling' },
-  -- Harpoon
-  -- h = {
-  --   name: "Harpoon",
-  --   ["1"]: "Go to 1"
-  -- }
-}, { prefix = '<leader>', mode = 'n', {} })
+wk.add {
+  { '<leader><tab>', '<cmd>e#<cr>', desc = 'Prev buffer' },
+  { '<leader>b', group = 'Buffers' },
+  { '<leader>bD', '<cmd>%bd|e#|bd#<cr>', desc = 'Close all but the current buffer' },
+  { '<leader>bd', '<cmd>Bdelete<cr>', desc = 'Close buffer' },
+  { '<leader>f', group = 'Files' },
+  { '<leader>fs', '<cmd>w<cr>', desc = 'Save Buffer' },
+  { '<leader>l', desc = 'LSP' },
+  { '<leader>lw', desc = 'Workspaces' },
+  { '<leader>m', group = 'Misc' },
+  { '<leader>ml', '<cmd>source ~/.config/nvim/snippets/*<cr>', desc = 'Reload snippets' },
+  { '<leader>mp', '<cmd>Lazy check<cr>', desc = 'Lazy check' },
+  { '<leader>q', group = 'Quickfix' },
+  { '<leader>qj', '<cmd>cnext<cr>', desc = 'Next Quickfix Item' },
+  { '<leader>qk', '<cmd>cprevious<cr>', desc = 'Previous Quickfix Item' },
+  { '<leader>qq', "<cmd>lua require('core.utils.functions').toggle_qf()<cr>", desc = 'Toggle quickfix list' },
+  { '<leader>qt', '<cmd>TodoQuickFix<cr>', desc = 'Show TODOs' },
+  { '<leader>s', desc = 'Search' },
+  { '<leader>t', group = 'Toggles' },
+  { '<leader>w', desc = 'Windows' },
+  { '<leader>z', desc = 'Spelling' },
+}
