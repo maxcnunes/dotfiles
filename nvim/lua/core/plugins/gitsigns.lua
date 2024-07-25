@@ -12,31 +12,54 @@ local M = {
       local gs = package.loaded.gitsigns
       local map = require('core.utils.functions').map
 
-      wk.register({
-        g = {
-          name = 'Git',
-          M = { 'Hydra move' },
-          ['<Enter>'] = { "<cmd>lua require('neogit').open()<cr>", 'Neogit' },
-          c = { '<cmd>G commit %<cr>', 'Commit buffer' },
-          P = { '<cmd>G push<cr>', 'Push' },
-          S = { gs.stage_buffer, 'Stage buffer' },
-          u = { gs.undo_stage_hunk, 'Undo stage hunk' },
-          r = {
-            name = 'Reset',
-            R = { gs.reset_buffer, 'Reset buffer' },
-          },
-          p = { gs.preview_hunk, 'Preview hunk' },
-          B = {
-            function()
-              gs.blame_line { full = true }
-            end,
-            'Blame full',
-          },
-          b = { gs.toggle_current_line_blame, 'Blame line' },
-          D = { gs.diffthis, 'Diff' },
-          d = { gs.toggle_deleted, 'Show deleted' },
+      -- wk.add({
+      --   g = {
+      --     name = 'Git',
+      --     M = { 'Hydra move' },
+      --     ['<Enter>'] = { "<cmd>lua require('neogit').open()<cr>", 'Neogit' },
+      --     c = { '<cmd>G commit %<cr>', 'Commit buffer' },
+      --     P = { '<cmd>G push<cr>', 'Push' },
+      --     S = { gs.stage_buffer, 'Stage buffer' },
+      --     u = { gs.undo_stage_hunk, 'Undo stage hunk' },
+      --     r = {
+      --       name = 'Reset',
+      --       R = { gs.reset_buffer, 'Reset buffer' },
+      --     },
+      --     p = { gs.preview_hunk, 'Preview hunk' },
+      --     B = {
+      --       function()
+      --         gs.blame_line { full = true }
+      --       end,
+      --       'Blame full',
+      --     },
+      --     b = { gs.toggle_current_line_blame, 'Blame line' },
+      --     D = { gs.diffthis, 'Diff' },
+      --     d = { gs.toggle_deleted, 'Show deleted' },
+      --   },
+      -- }, { prefix = '<leader>', mode = 'n', default_options })
+
+      wk.add {
+        { '<leader>g', group = 'Git' },
+        { '<leader>g<Enter>', "<cmd>lua require('neogit').open()<cr>", desc = 'Neogit' },
+        {
+          '<leader>gB',
+          function()
+            gs.blame_line { full = true }
+          end,
+          desc = 'Blame full',
         },
-      }, { prefix = '<leader>', mode = 'n', default_options })
+        { '<leader>gD', gs.diffthis, desc = 'Diff' },
+        { '<leader>gM', desc = 'Hydra move' },
+        { '<leader>gP', '<cmd>G push<cr>', desc = 'Push' },
+        { '<leader>gS', gs.stage_buffer, desc = 'Stage buffer' },
+        { '<leader>gb', gs.toggle_current_line_blame, desc = 'Blame line' },
+        { '<leader>gc', '<cmd>G commit %<cr>', desc = 'Commit buffer' },
+        { '<leader>gd', gs.toggle_deleted, desc = 'Show deleted' },
+        { '<leader>gp', gs.preview_hunk, desc = 'Preview hunk' },
+        { '<leader>gr', group = 'Reset' },
+        { '<leader>grR', gs.reset_buffer, desc = 'Reset buffer' },
+        { '<leader>gu', gs.undo_stage_hunk, desc = 'Undo stage hunk' },
+      }
 
       -- TODO: with german qwertz this bindings are awful
       map('n', ']c', function()
@@ -65,29 +88,31 @@ local M = {
     end
     require('gitsigns').setup {
       signs = {
-        add = { hl = 'GitSignsAdd', text = '│', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
-        change = { hl = 'GitSignsChange', text = '│', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
-        delete = { hl = 'GitSignsDelete', text = '_', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
-        topdelete = { hl = 'GitSignsDelete', text = '‾', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
-        changedelete = { hl = 'GitSignsChange', text = '~', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
+        add = { text = '┃' },
+        change = { text = '┃' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked = { text = '┆' },
       },
       signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
       numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
       linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
       word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
       watch_gitdir = {
-        interval = 1000,
         follow_files = true,
       },
-      attach_to_untracked = true,
+      auto_attach = true,
+      attach_to_untracked = false,
       current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
       current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-        delay = 0,
+        delay = 1000,
         ignore_whitespace = false,
+        virt_text_priority = 100,
       },
-      current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+      current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
       sign_priority = 6,
       update_debounce = 100,
       status_formatter = nil, -- Use default
@@ -99,9 +124,6 @@ local M = {
         relative = 'cursor',
         row = 0,
         col = 1,
-      },
-      yadm = {
-        enable = false,
       },
     }
     mappings()

@@ -151,6 +151,12 @@ local function create_mapping()
       r = { ':lua require("dap").restart_frame()<cr>', 'Restart (C-F5)' },
       R = { ':lua require("dap").repl.toggle()<cr>', 'Toggle REPL' },
       s = { ':lua require("dap").run_to_cursor()<cr>', 'Run To Cursor' },
+      ['?'] = {
+        function()
+          require('dapui').eval(nil, { enter = true })
+        end,
+        'Show variable value',
+      },
 
       -- b = { "<cmd>lua require('dap').toggle_breakpoint(); require('core.plugins.dap.breakpoint').store_breakpoints(true)<cr>", 'Toggle breakpoint' },
       -- c = { ':DapContinue<CR>', 'Continue' },

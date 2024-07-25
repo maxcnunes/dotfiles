@@ -10,10 +10,10 @@ return {
     events = events,
     linters_by_ft = {
       c = { 'cppcheck' },
-      dockerfile = { 'hadolint' },
+      -- dockerfile = { 'hadolint' },
       go = { 'golangcilint' },
       lua = { 'selene' },
-      sh = { 'shellcheck' },
+      -- sh = { 'shellcheck' },
       yaml = { 'yamllint' },
     },
   },

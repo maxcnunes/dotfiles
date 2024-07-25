@@ -15,10 +15,22 @@ require('core.utils.functions').on_attach(function(client, buffer)
   require('core.plugins.lsp.keys').on_attach(client, buffer)
 end)
 
-for _, lsp in ipairs(settings.lsp_servers) do
+local function setup_lsp_language_server(lsp)
+  local lsp_server_settings = {}
+
   if lsp == 'rust_analyzer' then
     vim.notify('rust_analyzer is managed by rust-tools', vim.log.levels.INFO, { title = 'LSP config' })
-    goto continue
+    return
+  elseif lsp == 'lua_ls' then
+    lsp_server_settings.Lua = lsp_settings.lua
+  elseif lsp == 'jsonls' then
+    lsp_server_settings.json = lsp_settings.json
+  elseif lsp == 'terraformls' then
+    lsp_server_settings.redhat = { telemetry = { enabled = false } }
+  elseif lsp == 'yamlls' then
+    lsp_server_settings.yaml = lsp_settings.yaml
+  elseif lsp == 'texlab' then
+    lsp_server_settings.texlab = lsp_settings.tex
   end
 
   -- NOTE: It uses the default configuration for each server from nvim-lspconfig.
@@ -30,15 +42,12 @@ for _, lsp in ipairs(settings.lsp_servers) do
     end,
     capabilities = capabilities,
     flags = { debounce_text_changes = 150 },
-    settings = {
-      json = lsp_settings.json,
-      Lua = lsp_settings.lua,
-      redhat = { telemetry = { enabled = false } },
-      texlab = lsp_settings.tex,
-      yaml = lsp_settings.yaml,
-    },
+    settings = lsp_server_settings,
   }
-  ::continue::
+end
+
+for _, lsp in ipairs(settings.lsp_servers) do
+  setup_lsp_language_server(lsp)
 end
 
 nvim_lsp.flow.setup {
@@ -56,16 +65,19 @@ vim.filetype.add {
         -- which determines it is a Javascript file with Flow type checking support.
         local isFlowFile = false
 
-        local lines = vim.filetype.getlines(bufnr, 1, 10)
+        -- TODO: it is using a private method, replace it with a public api option.
+        local lines = vim.filetype._getlines(bufnr, 1, 10)
 
         for _, content in pairs(lines) do
           if content ~= '' then
-            if vim.filetype.matchregex(content, '^// @flow') or vim.filetype.matchregex(content, '^/* @flow') then
+            -- TODO: it is using a private method, replace it with a public api option.
+            if vim.filetype._matchregex(content, '^// @flow') or vim.filetype._matchregex(content, '^/* @flow') then
               isFlowFile = true
               break
             end
 
-            if vim.filetype.matchregex(content, '^// @noflow') or vim.filetype.matchregex(content, '^/* @noflow') then
+            -- TODO: it is using a private method, replace it with a public api option.
+            if vim.filetype._matchregex(content, '^// @noflow') or vim.filetype._matchregex(content, '^/* @noflow') then
               break
             end
           end

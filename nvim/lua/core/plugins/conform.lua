@@ -33,9 +33,9 @@ return {
   config = function(_, opts)
     local conform = require 'conform'
     conform.setup(opts)
-    conform.formatters.shfmt = {
-      prepend_args = { '-i', '2' }, -- 2 spaces instead of tab
-    }
+    -- conform.formatters.shfmt = {
+    --   prepend_args = { '-i', '2' }, -- 2 spaces instead of tab
+    -- }
     conform.formatters.stylua = {
       prepend_args = { '--indent-type', 'Spaces', '--indent-width', '2' }, -- 2 spaces instead of tab
     }
