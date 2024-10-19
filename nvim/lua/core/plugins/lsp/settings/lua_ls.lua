@@ -1,4 +1,4 @@
--- https://github.com/sumneko/lua-language-server/blob/master/locale/en-us/setting.lua
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
 local opts = {
   cmd = { 'lua-language-server' },
   format = {
@@ -25,8 +25,8 @@ local opts = {
   workspace = {
     library = {
       vim.api.nvim_get_runtime_file('', true),
-      [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-      [vim.fn.expand '$VIMRUNTIME/lua/vim/lsp'] = true,
+      vim.fn.expand '$VIMRUNTIME/lua',
+      vim.fn.expand '$VIMRUNTIME/lua/vim/lsp',
       '${3rd}/luv/library',
     },
     -- adjust these two values if your performance is not optimal
