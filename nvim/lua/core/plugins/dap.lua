@@ -15,7 +15,7 @@ local M = {
       'Weissle/persistent-breakpoints.nvim',
     },
     event = 'VeryLazy',
-    ft = { 'c', 'go' }, -- Only load it for these file types
+    ft = { 'c', 'go', 'rust' }, -- Only load it for these file types
     config = function(self)
       vim.api.nvim_create_autocmd('FileType', {
         pattern = self.ft,

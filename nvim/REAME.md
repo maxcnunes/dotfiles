@@ -12,3 +12,28 @@ How to dbg neovim: https://www.reddit.com/r/neovim/comments/lnd22u/comment/gnzz5
 4. `F10` step over
 5. `F11` step into
 6. `F12` step out
+
+Make sure the program is compiled with debug support.
+If there are any problems, enable the TRACE log level for the dap plugin and check the logs at
+
+## Updating dependencies
+
+- To update all Neovim packages, run the command `:Lazy sync`.
+- To update all Mason dependencies, run the command `:Mason` and hit `U`.
+
+## Troubleshooting
+
+Given this error:
+
+```
+Error executing vim.schedule lua callback: ...eovim/0.10.2_1/share/nvim/runtime/lua/vim/lsp/client.lua:771: Invalid 'data': Cannot convert given Lua table
+stack traceback:
+        [C]: in function 'nvim_exec_autocmds'
+```
+
+Possibly some lua lsp configuration is incorrect. Try commenting the whole options data in `lua_ls.lua` and uncomment parts of it to find out what is broken.
+
+## Lua tips
+
+To print table data in neovim use `print(vim.inspect(data))`.
+`

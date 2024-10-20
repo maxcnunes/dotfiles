@@ -54,6 +54,8 @@ local function configure_exts()
   local dap = require 'dap'
   local dapui = require 'dapui'
 
+  dap.set_log_level 'DEBUG'
+
   -- print 'DEBUG DATA'
   -- print(vim.fn.stdpath 'data' .. '/nvim_checkpoints')
   -- require('persistent-breakpoints').setup {
@@ -65,12 +67,12 @@ local function configure_exts()
   dap.listeners.after.event_initialized['dapui_config'] = function()
     dapui.open {}
   end
-  dap.listeners.before.event_terminated['dapui_config'] = function()
-    dapui.close {}
-  end
-  dap.listeners.before.event_exited['dapui_config'] = function()
-    dapui.close {}
-  end
+  -- dap.listeners.before.event_terminated['dapui_config'] = function()
+  --   dapui.close {}
+  -- end
+  -- dap.listeners.before.event_exited['dapui_config'] = function()
+  --   dapui.close {}
+  -- end
 end
 
 --- Gets a path for a given program in the environment
@@ -128,8 +130,6 @@ local function configure_debuggers()
   dap.configurations.asm = dap.configurations.cpp
   dap.configurations.rust = dap.configurations.cpp
   require('dap-go').setup()
-  -- print 'GOCONFIG'
-  -- print(vim.inspect(dap.configurations.go))
 end
 
 local function create_mapping()

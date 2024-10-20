@@ -11,7 +11,7 @@ return {
     linters_by_ft = {
       c = { 'cppcheck' },
       -- dockerfile = { 'hadolint' },
-      go = { 'golangcilint' },
+      -- go = { 'golangcilint' },
       lua = { 'selene' },
       -- sh = { 'shellcheck' },
       yaml = { 'yamllint' },

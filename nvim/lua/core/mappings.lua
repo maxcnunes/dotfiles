@@ -180,7 +180,7 @@ wk.add {
   { '<leader><tab>', '<cmd>e#<cr>', desc = 'Prev buffer' },
   { '<leader>b', group = 'Buffers' },
   { '<leader>bD', '<cmd>%bd|e#|bd#<cr>', desc = 'Close all but the current buffer' },
-  { '<leader>bd', '<cmd>Bdelete<cr>', desc = 'Close buffer' },
+  { '<leader>bd', '<cmd>bdelete<cr>', desc = 'Close buffer' },
   { '<leader>f', group = 'Files' },
   { '<leader>fs', '<cmd>w<cr>', desc = 'Save Buffer' },
   { '<leader>l', desc = 'LSP' },

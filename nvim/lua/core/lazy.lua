@@ -27,5 +27,10 @@ require('lazy').setup('core.plugins', {
     enabled = false,
     notify = true, -- get a notification when changes are found
   },
+  rocks = {
+    -- disabling rocks for now as we don't depend on any plugin that uses it.
+    -- if we ever need it, then it will require installing lua@5.1 and luarocks with homebrew
+    enabled = false,
+  },
   debug = false,
 })

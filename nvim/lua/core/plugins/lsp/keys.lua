@@ -10,7 +10,6 @@ M._keys = {
   {
     '<leader>lR',
     function()
-      require 'inc_rename'
       return ':IncRename ' .. vim.fn.expand '<cword>'
     end,
     expr = true,
@@ -57,7 +56,7 @@ function M.on_attach(client, buffer)
       opts.has = nil
       opts.silent = opts.silent ~= false
       opts.buffer = buffer
-      vim.keymap.set(keys.mode or "n", keys.lhs, keys.rhs, opts)
+      vim.keymap.set(keys.mode or 'n', keys.lhs, keys.rhs, opts)
     end
   end
 end
