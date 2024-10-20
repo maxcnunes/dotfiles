@@ -50,6 +50,11 @@ function pwdx {
   lsof -a -d cwd -p $1 -n -Fn | awk '/^n/ {print substr($0,2)}'
 }
 
+## Print process current working directory
+function pcwd {
+  lsof -a -d cwd -p $1
+}
+
 ## Kill program process running in the current working directory.
 kill_process_cwd (){
   program=$1
