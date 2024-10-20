@@ -1,3 +1,11 @@
+# Useful TMUX commands;
+# - Copy entire panel:
+#   - press `<leader> + ]` to enter copy-mode
+#   - press `<space>` to begin selecting
+#   - press `gg` to go to the beginning of the panel
+#   - press `y` to copy content to the clipboard
+#
+#
 # Set term color properly
 set -g default-terminal "xterm-256color"
 if-shell 'test "$(uname -s)" = Darwin' 'set-option -g default-command "exec reattach-to-user-namespace $SHELL --login"'
@@ -14,8 +22,8 @@ set -g status-bg 'colour0'
 set -g status-fg 'colour250'
 set -g status-left '#[fg=colour232,bg=colour154]▏ tmux▕'
 set -g status-right '#[fg=colour235,bg=colour11]▏#{prefix_highlight}▕'
-setw -g window-status-format '#[fg=colour235,bg=colour0]▏#[fg=colour250,bg=colour0]#I:#W#[fg=colour235,bg=colour0]▕'
-setw -g window-status-current-format '#[fg=colour235,bg=colour5]▏#[fg=colour232,bg=colour5]#I:#W#[fg=colour235,bg=colour5]▕'
+setw -g window-status-format '#[fg=colour235,bg=colour0]▏#[fg=colour250,bg=colour0]#{window_index}:#{window_name}#[fg=colour235,bg=colour0]▕'
+setw -g window-status-current-format '#[fg=colour235,bg=colour5]▏#[fg=colour232,bg=colour5]#{window_index}:#{window_name}:#{pane_current_command}#[fg=colour235,bg=colour5]▕'
 set -g window-status-separator ""
 set-option -g allow-rename off
 
@@ -65,11 +73,14 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-# # Resize settings
-# resize-pane -D
-# resize-pane -U
-# resize-pane -L
-# resize-pane -R
+# Resize pane settings
+bind -n C-k resize-pane -U 5
+bind -n C-j resize-pane -D 5
+bind -n C-h resize-pane -L 5
+bind -n C-l resize-pane -R 5
+
+# Switch pane without losing current zoom state
+bind -n C-p last-pane -Z
 
 # When close one window sort it again
 set -g renumber-windows on
