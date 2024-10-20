@@ -1,0 +1,4 @@
+-- zoomed = "[Z] "
+-- zoomed = "[󰫢] "
+-- zoomed = "🔍"
+-- zoomed = "[👀] "
